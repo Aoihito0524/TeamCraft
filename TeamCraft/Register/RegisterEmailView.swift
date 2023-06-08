@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseAuth
 
-struct RegisterView: View{
+struct RegisterEmailView: View{
     @State var email: String = ""
     @State var password: String = ""
     @State var errorOccured = false
@@ -23,11 +23,6 @@ struct RegisterView: View{
             TextField("メールアドレス", text: $email)
             PasswordField(password: $password)
             Button("次へ"){
-                //認証の途中で戻ってきた場合の対処
-                if let user = Auth.auth().currentUser{//アカウントがある場合
-                    finishFlag.toggle()
-                    return;
-                }
                 //新規登録
                 Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
                     ShowError_or_Finish(error: error)

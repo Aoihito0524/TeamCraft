@@ -8,7 +8,7 @@
 import SwiftUI
 import FirebaseAuth
 
-struct RegisterVelificationView: View{
+struct EmailVelificationView: View{
     @Binding var finishFlag: Bool
     @Binding var backFlag: Bool
     var body: some View{

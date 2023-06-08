@@ -9,13 +9,17 @@
 /* Begin PBXBuildFile section */
 		7785D5493955C5CEFD9B3A63 /* Pods_TeamCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF590AC89079705AB96CD331 /* Pods_TeamCraft.framework */; };
 		916CC2DB2A31804B00B3A786 /* TeamCraftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */; };
-		916CC2DD2A31804B00B3A786 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916CC2DC2A31804B00B3A786 /* ContentView.swift */; };
+		916CC2DD2A31804B00B3A786 /* RegisterViewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916CC2DC2A31804B00B3A786 /* RegisterViewView.swift */; };
 		916CC2DF2A31804C00B3A786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2DE2A31804C00B3A786 /* Assets.xcassets */; };
 		916CC2E22A31804C00B3A786 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2E12A31804C00B3A786 /* Preview Assets.xcassets */; };
-		919007A02A318A0A002CD7B8 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190079F2A318A0A002CD7B8 /* RegisterView.swift */; };
+		919007A02A318A0A002CD7B8 /* RegisterEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190079F2A318A0A002CD7B8 /* RegisterEmailView.swift */; };
 		919007A12A318B22002CD7B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2E82A3185F900B3A786 /* GoogleService-Info.plist */; };
 		919007A32A31A58B002CD7B8 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A22A31A58B002CD7B8 /* Account.swift */; };
-		919007A52A31AC5D002CD7B8 /* RegisterVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A42A31AC5D002CD7B8 /* RegisterVerificationView.swift */; };
+		919007A52A31AC5D002CD7B8 /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */; };
+		919007A82A31FC58002CD7B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A72A31FC58002CD7B8 /* ContentView.swift */; };
+		919007AA2A31FC9B002CD7B8 /* RegisterUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A92A31FC9B002CD7B8 /* RegisterUserNameView.swift */; };
+		919007AC2A31FE53002CD7B8 /* RegisterFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007AB2A31FE53002CD7B8 /* RegisterFinishView.swift */; };
+		919007AE2A32002C002CD7B8 /* EmailVerificationFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007AD2A32002C002CD7B8 /* EmailVerificationFinishView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,13 +27,17 @@
 		6F8BA07EA3CD418A2204BAFF /* Pods-TeamCraft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamCraft.debug.xcconfig"; path = "Target Support Files/Pods-TeamCraft/Pods-TeamCraft.debug.xcconfig"; sourceTree = "<group>"; };
 		916CC2D72A31804B00B3A786 /* TeamCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCraftApp.swift; sourceTree = "<group>"; };
-		916CC2DC2A31804B00B3A786 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		916CC2DC2A31804B00B3A786 /* RegisterViewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewView.swift; sourceTree = "<group>"; };
 		916CC2DE2A31804C00B3A786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		916CC2E12A31804C00B3A786 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		916CC2E82A3185F900B3A786 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9190079F2A318A0A002CD7B8 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		9190079F2A318A0A002CD7B8 /* RegisterEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailView.swift; sourceTree = "<group>"; };
 		919007A22A31A58B002CD7B8 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		919007A42A31AC5D002CD7B8 /* RegisterVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVerificationView.swift; sourceTree = "<group>"; };
+		919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
+		919007A72A31FC58002CD7B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		919007A92A31FC9B002CD7B8 /* RegisterUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserNameView.swift; sourceTree = "<group>"; };
+		919007AB2A31FE53002CD7B8 /* RegisterFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFinishView.swift; sourceTree = "<group>"; };
+		919007AD2A32002C002CD7B8 /* EmailVerificationFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationFinishView.swift; sourceTree = "<group>"; };
 		BF590AC89079705AB96CD331 /* Pods_TeamCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -84,9 +92,8 @@
 			isa = PBXGroup;
 			children = (
 				916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */,
-				916CC2DC2A31804B00B3A786 /* ContentView.swift */,
-				9190079F2A318A0A002CD7B8 /* RegisterView.swift */,
-				919007A42A31AC5D002CD7B8 /* RegisterVerificationView.swift */,
+				919007A72A31FC58002CD7B8 /* ContentView.swift */,
+				919007A62A31FBE3002CD7B8 /* Register */,
 				919007A22A31A58B002CD7B8 /* Account.swift */,
 				916CC2DE2A31804C00B3A786 /* Assets.xcassets */,
 				916CC2E82A3185F900B3A786 /* GoogleService-Info.plist */,
@@ -101,6 +108,19 @@
 				916CC2E12A31804C00B3A786 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		919007A62A31FBE3002CD7B8 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				916CC2DC2A31804B00B3A786 /* RegisterViewView.swift */,
+				9190079F2A318A0A002CD7B8 /* RegisterEmailView.swift */,
+				919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */,
+				919007AD2A32002C002CD7B8 /* EmailVerificationFinishView.swift */,
+				919007A92A31FC9B002CD7B8 /* RegisterUserNameView.swift */,
+				919007AB2A31FE53002CD7B8 /* RegisterFinishView.swift */,
+			);
+			path = Register;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -218,10 +238,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				919007A52A31AC5D002CD7B8 /* RegisterVerificationView.swift in Sources */,
-				919007A02A318A0A002CD7B8 /* RegisterView.swift in Sources */,
+				919007AE2A32002C002CD7B8 /* EmailVerificationFinishView.swift in Sources */,
+				919007A52A31AC5D002CD7B8 /* EmailVerificationView.swift in Sources */,
+				919007A02A318A0A002CD7B8 /* RegisterEmailView.swift in Sources */,
+				919007AA2A31FC9B002CD7B8 /* RegisterUserNameView.swift in Sources */,
+				919007A82A31FC58002CD7B8 /* ContentView.swift in Sources */,
+				919007AC2A31FE53002CD7B8 /* RegisterFinishView.swift in Sources */,
 				919007A32A31A58B002CD7B8 /* Account.swift in Sources */,
-				916CC2DD2A31804B00B3A786 /* ContentView.swift in Sources */,
+				916CC2DD2A31804B00B3A786 /* RegisterViewView.swift in Sources */,
 				916CC2DB2A31804B00B3A786 /* TeamCraftApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
