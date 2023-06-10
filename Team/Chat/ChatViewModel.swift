@@ -9,6 +9,7 @@ import SwiftUI
 import FirebaseFirestore
 
 class ChatViewModel: ObservableObject{
+    @Published var group = groupDataType(groupId: "")
     @Published var messages = [messageDataType]()
     init() {
         let db = Firestore.firestore()
@@ -28,7 +29,7 @@ class ChatViewModel: ObservableObject{
                         let createDate = createdAt.dateValue()
                         let id = i.document.documentID
                         
-                        self.messages.append(messageDataType(id: id, userName: userName, message: message, createAt: createDate))
+                        self.messages.append(messageDataType(groupId: self.group.groupId, id: id, userName: userName, message: message, createAt: createDate))
                     }
                 }
                 // 日付順に並べ替えする
@@ -40,6 +41,7 @@ class ChatViewModel: ObservableObject{
     }
     func AddMessage(message: String , user: String) {
         let data = [
+            "groupId": group.groupId,
             "message": message,
             "userName": user,
             "createAt":FieldValue.serverTimestamp(),
@@ -59,8 +61,13 @@ class ChatViewModel: ObservableObject{
 }
 
 struct messageDataType: Identifiable {
+    var groupId: String
     var id: String
     var userName: String
     var message: String
     var createAt: Date
+}
+
+struct groupDataType{
+    var groupId: String
 }
