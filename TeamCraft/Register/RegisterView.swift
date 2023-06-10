@@ -22,7 +22,7 @@ struct RegisterView: View {
     @State var finishFlag = false
     @State var backFlag = false
     //全工程が完了した時のフラグ
-    @State var RegisterFinished = false
+    @Binding var registerFinishFlag: Bool
     var body: some View {
         ZStack{
             switch step{
@@ -50,7 +50,7 @@ struct RegisterView: View {
                         step = .finish
                     }
             case .finish:
-                RegisterFinishView(RegisterFinished:$RegisterFinished)
+                RegisterFinishView(registerFinishFlag:$registerFinishFlag)
             }
         }
     }

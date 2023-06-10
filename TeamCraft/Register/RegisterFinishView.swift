@@ -8,13 +8,13 @@
 import SwiftUI
 
 struct RegisterFinishView: View{
-    @Binding var RegisterFinished: Bool
+    @Binding var registerFinishFlag: Bool
     var body: some View{
         VStack{
             Text("登録が完了しました")
             Text("チームクラフトを始めよう！")
             Button("始める"){
-                RegisterFinished = true
+                registerFinishFlag.toggle()
             }
         }
     }

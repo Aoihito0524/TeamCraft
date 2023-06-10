@@ -9,6 +9,9 @@ import SwiftUI
 import FirebaseAuth
 import FirebaseCore
 
+let DEVICE_HEIGHT = UIScreen.main.bounds.height
+let DEVICE_WIDTH = UIScreen.main.bounds.width
+
 class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication,
                     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
