@@ -31,6 +31,10 @@
 		919007C72A345D49002CD7B8 /* SelectTagView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007C62A345D49002CD7B8 /* SelectTagView.swift */; };
 		919007C92A345FCA002CD7B8 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007C82A345FCA002CD7B8 /* ImagePicker.swift */; };
 		919007CC2A346A39002CD7B8 /* DefaultTeamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007CB2A346A39002CD7B8 /* DefaultTeamView.swift */; };
+		919007CE2A374961002CD7B8 /* JoinPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007CD2A374961002CD7B8 /* JoinPopupView.swift */; };
+		919007D12A396EB7002CD7B8 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007D02A396EB7002CD7B8 /* User.swift */; };
+		919007D32A396ED7002CD7B8 /* TeamInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007D22A396ED7002CD7B8 /* TeamInformation.swift */; };
+		919007D52A396F34002CD7B8 /* TeamTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007D42A396F34002CD7B8 /* TeamTag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +64,10 @@
 		919007C62A345D49002CD7B8 /* SelectTagView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTagView.swift; sourceTree = "<group>"; };
 		919007C82A345FCA002CD7B8 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		919007CB2A346A39002CD7B8 /* DefaultTeamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultTeamView.swift; sourceTree = "<group>"; };
+		919007CD2A374961002CD7B8 /* JoinPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JoinPopupView.swift; sourceTree = "<group>"; };
+		919007D02A396EB7002CD7B8 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		919007D22A396ED7002CD7B8 /* TeamInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInformation.swift; sourceTree = "<group>"; };
+		919007D42A396F34002CD7B8 /* TeamTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTag.swift; sourceTree = "<group>"; };
 		BF590AC89079705AB96CD331 /* Pods_TeamCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -113,6 +121,7 @@
 		916CC2D92A31804B00B3A786 /* TeamCraft */ = {
 			isa = PBXGroup;
 			children = (
+				919007CF2A396EA9002CD7B8 /* Model */,
 				916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */,
 				919007A72A31FC58002CD7B8 /* ContentView.swift */,
 				919007A62A31FBE3002CD7B8 /* Register */,
@@ -163,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				919007B62A33F503002CD7B8 /* FindView.swift */,
+				919007CD2A374961002CD7B8 /* JoinPopupView.swift */,
 			);
 			path = Find;
 			sourceTree = "<group>";
@@ -202,23 +212,33 @@
 			path = Chat;
 			sourceTree = "<group>";
 		};
-		919007C32A345C23002CD7B8 /* Recruit */ = {
+		919007C32A345C23002CD7B8 /* CreateTeam */ = {
 			isa = PBXGroup;
 			children = (
 				919007C42A345C72002CD7B8 /* CreateTeamView.swift */,
 				919007C62A345D49002CD7B8 /* SelectTagView.swift */,
 				919007C82A345FCA002CD7B8 /* ImagePicker.swift */,
 			);
-			path = Recruit;
+			path = CreateTeam;
 			sourceTree = "<group>";
 		};
 		919007CA2A346A1B002CD7B8 /* Default */ = {
 			isa = PBXGroup;
 			children = (
 				919007CB2A346A39002CD7B8 /* DefaultTeamView.swift */,
-				919007C32A345C23002CD7B8 /* Recruit */,
+				919007C32A345C23002CD7B8 /* CreateTeam */,
 			);
 			path = Default;
+			sourceTree = "<group>";
+		};
+		919007CF2A396EA9002CD7B8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				919007D02A396EB7002CD7B8 /* User.swift */,
+				919007D22A396ED7002CD7B8 /* TeamInformation.swift */,
+				919007D42A396F34002CD7B8 /* TeamTag.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,6 +359,7 @@
 				919007AE2A32002C002CD7B8 /* EmailVerificationFinishView.swift in Sources */,
 				919007A52A31AC5D002CD7B8 /* EmailVerificationView.swift in Sources */,
 				919007A02A318A0A002CD7B8 /* RegisterEmailView.swift in Sources */,
+				919007D52A396F34002CD7B8 /* TeamTag.swift in Sources */,
 				919007B12A33F430002CD7B8 /* HomeView.swift in Sources */,
 				919007B72A33F503002CD7B8 /* FindView.swift in Sources */,
 				919007C52A345C72002CD7B8 /* CreateTeamView.swift in Sources */,
@@ -346,6 +367,7 @@
 				919007C92A345FCA002CD7B8 /* ImagePicker.swift in Sources */,
 				919007A82A31FC58002CD7B8 /* ContentView.swift in Sources */,
 				919007BF2A3414D3002CD7B8 /* ChatView.swift in Sources */,
+				919007D12A396EB7002CD7B8 /* User.swift in Sources */,
 				919007C72A345D49002CD7B8 /* SelectTagView.swift in Sources */,
 				919007CC2A346A39002CD7B8 /* DefaultTeamView.swift in Sources */,
 				919007AC2A31FE53002CD7B8 /* RegisterFinishView.swift in Sources */,
@@ -354,6 +376,8 @@
 				916CC2DD2A31804B00B3A786 /* RegisterView.swift in Sources */,
 				919007BD2A33F522002CD7B8 /* MyAccountView.swift in Sources */,
 				916CC2DB2A31804B00B3A786 /* TeamCraftApp.swift in Sources */,
+				919007D32A396ED7002CD7B8 /* TeamInformation.swift in Sources */,
+				919007CE2A374961002CD7B8 /* JoinPopupView.swift in Sources */,
 				919007BB2A33F518002CD7B8 /* MailView.swift in Sources */,
 				919007B92A33F50F002CD7B8 /* TeamView.swift in Sources */,
 			);

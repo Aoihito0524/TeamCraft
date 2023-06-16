@@ -25,6 +25,9 @@ struct RegisterView: View {
     @Binding var registerFinishFlag: Bool
     var body: some View {
         ZStack{
+            Rectangle()
+                .fill(BACKGROUND_COLOR)
+                .ignoresSafeArea()
             switch step{
             case .registerEmail:
                 RegisterEmailView(finishFlag: $finishFlag)
@@ -53,5 +56,12 @@ struct RegisterView: View {
                 RegisterFinishView(registerFinishFlag:$registerFinishFlag)
             }
         }
+    }
+}
+
+struct RegisterPreview: PreviewProvider{
+    @State static var flag = false
+    static var previews: some View{
+        RegisterView(registerFinishFlag: $flag)
     }
 }

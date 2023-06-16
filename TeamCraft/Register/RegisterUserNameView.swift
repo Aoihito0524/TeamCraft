@@ -15,7 +15,14 @@ struct RegisterUserNameView: View{
     var body: some View{
         VStack{
             Text("ユーザーネームを登録")
+                .font(.largeTitle)
+                .padding(.vertical, DEVICE_HEIGHT * 0.05)
             TextField("名前を入力", text: $name)
+                .textFieldStyle(.roundedBorder)
+                .multilineTextAlignment(TextAlignment.center)
+                .frame(width: DEVICE_WIDTH * 0.75)
+                .padding(.bottom, DEVICE_HEIGHT * 0.08)
+            Divider()
             Button("次へ"){
                 if let user = Auth.auth().currentUser {
                     registerUserNameVM.RegisterUserName(user: user, name: name)
@@ -23,6 +30,8 @@ struct RegisterUserNameView: View{
                 }
             }
         }
+        .cornerRadius(10)
+        .background(Color.white)
     }
 }
 class RegisterUserNameViewModel{

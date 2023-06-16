@@ -14,8 +14,17 @@ struct EmailVelificationView: View{
     var body: some View{
         VStack(){
             Text("認証メールを送信しました")
-            Text("認証メールが届かない場合は再送信ボタンを押してください")
-            Text("認証メールが届くまで時間がかかる場合があります")
+                .font(.largeTitle)
+                .padding(.vertical, DEVICE_HEIGHT * 0.05)
+            Group{
+                Text("認証メールが届かない場合は再送信ボタンを押してください")
+                    .font(.body)
+                Text("認証メールが届くまで時間がかかる場合があります")
+                    .font(.body)
+            }
+            .padding(.bottom, DEVICE_HEIGHT * 0.1)
+            
+            Divider()
             HStack{
                 Button("戻る"){
                     backFlag.toggle()
@@ -25,6 +34,8 @@ struct EmailVelificationView: View{
                 }
             }
         }
+        .cornerRadius(10)
+        .background(Color.white)
         .onAppear{
             Add_WhenEndVerification()
             SendVerification()

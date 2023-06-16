@@ -12,9 +12,13 @@ struct EmailVerificationFinishView: View{
     var body: some View{
         VStack{
             Text("メール認証が完了しました")
+                .padding(.vertical, DEVICE_HEIGHT * 0.1)
+            Divider()
             Button("次へ"){
                 finishFlag.toggle()
             }
         }
+        .cornerRadius(10)
+        .background(Color.white)
     }
 }
