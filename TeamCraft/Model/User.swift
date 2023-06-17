@@ -25,7 +25,7 @@ class UserInformation: ObservableObject{
                     print("エラー発生: \(error.localizedDescription)")
                 }
                 if let snapshot = snapshot, snapshot.exists{
-                    self.joinTeamIds = []//snapshot.get("joinTeamIds") as! [String]
+                    self.joinTeamIds = snapshot.get("joinTeamIds") as! [String]
                 }
                 else{ //新規作成
                     self.save()

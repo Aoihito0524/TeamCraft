@@ -16,12 +16,7 @@ struct FindView: View{
                 .fill(BACKGROUND_COLOR)
                 .ignoresSafeArea()
             VStack{
-                HStack{
-                    TextField("検索", text: $findVM.searchText)
-                    Button("検索"){
-                        findVM.Search()
-                    }
-                }
+                TopBar_FindView(searchText: $findVM.searchText, DoSearch: findVM.Search)
                 ScrollView{
                     LazyVStack{
                         ForEach(findVM.searchResults){ teamInfo in
@@ -29,7 +24,6 @@ struct FindView: View{
                         }
                         Divider()
                     }
-                    .background(Color.white)
                 }
             }
             if let clickedTeamInfo = findVM.clickedTeamInfo{
@@ -39,26 +33,36 @@ struct FindView: View{
     }
 }
 
-struct teamInformationUI: View{
-    let teamInfo: TeamInformation
-    @Binding var clickedTeamInfo: TeamInformation?
+struct TopBar_FindView: View{
+    @Binding var searchText: String
+    let DoSearch: ()->()
     var body: some View{
-        VStack{
-            HStack{
-                //タグ名横並び
-                ForEach(teamInfo.tags.tags){tag in
-                    TagLabel(tag: tag)
+        HStack{
+            Image(systemName: "circle.fill")
+                .resizable()
+                .frame(width: DEVICE_HEIGHT * 0.07, height: DEVICE_HEIGHT * 0.07)
+                .padding(DEVICE_HEIGHT * 0.03)
+            VStack{
+                Text("探す")
+                    .font(.title)
+                HStack{
+                    HStack{
+                        Image(systemName: "magnifyingglass")
+                        TextField("検索", text: $searchText)
+                    }
+                    .background(Color(red: 0.9, green: 0.9, blue: 0.9))
+                    .cornerRadius(10)
+                    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidHideNotification)) { _ in
+                        DoSearch()
+                    }
+//                    Button("検索"){
+//                        DoSearch()
+//                    }
                 }
-                //その横にタイトル
-                Text(teamInfo.title)
             }
-            Text(teamInfo.description)
-                .lineLimit(5)
+            .padding(.trailing, DEVICE_HEIGHT * 0.05)
         }
-        .frame(width: DEVICE_WIDTH * 0.869, height: DEVICE_HEIGHT * 0.3)
-        .onTapGesture{
-            clickedTeamInfo = teamInfo
-        }
+        .background(Color.white.opacity(0.92))
     }
 }
 

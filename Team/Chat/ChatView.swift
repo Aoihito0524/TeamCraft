@@ -43,7 +43,7 @@ struct MessageUI: View{
     let dateFormatter = DateFormatter()
     init(message: messageDataType){
         self.message = message
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX"//"MM月dd日HH:mm"
+        dateFormatter.dateFormat = "MM月dd日HH:mm"//"yyyy-MM-dd'T'HH:mm:ssXXX"//
     }
     var body: some View{
         VStack{

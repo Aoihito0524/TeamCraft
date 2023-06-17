@@ -11,6 +11,9 @@ import FirebaseStorage
 
 //チーム作成用
 class TeamInformation: ObservableObject, Identifiable{
+    static func ImageHeight(width: CGFloat) -> CGFloat{
+        return width * 0.2
+    }
     @Published var teamId = ""
     @Published var image : UIImage?
     @Published var imageURL: String?
@@ -23,18 +26,21 @@ class TeamInformation: ObservableObject, Identifiable{
         let data = document.data()
         //画像以外をロードする
         title = data["title"] as! String
-        title = data["description"] as! String
+        description = data["description"] as! String
         tags = TagGroup(StringArray: (data["tags"] as! [String]))
-        teamId = document.documentID as! String
+        teamId = document.documentID
         //画像がある場合はロードする
         imageURL = data["imageURL"] as? String
         if let urlString = imageURL, let url = URL(string: urlString){
-            do {
-                let data = try Data(contentsOf: url)
-                image = UIImage(data: data)!
-            } catch let error {
-                print("Error : \(error.localizedDescription)")
-            }
+            URLSession.shared.dataTask(with: url) { (data, response, error) in
+                print("urlLoad Start")
+                guard let data = data else { return }
+                print("After guard")
+                DispatchQueue.main.async {
+                    print("Image Loaded")
+                    self.image = UIImage(data: data)
+                }
+            }.resume()
         }
     }
     func saveImage() -> StorageUploadTask{
