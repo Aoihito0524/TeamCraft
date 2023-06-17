@@ -10,7 +10,6 @@ import SwiftUI
 struct Tag: Identifiable{
     let id = UUID()
     let tagName: String
-    var isSelected = false
     init(tagName: String){
         self.tagName = tagName
     }
@@ -28,6 +27,9 @@ struct TagGroup: Identifiable{
     }
     func StringArray() -> [String]{
         return tags.map{$0.tagName}
+    }
+    func Contains(tag: Tag) -> Bool{
+        return tags.map{$0.tagName}.contains(tag.tagName)
     }
 }
 

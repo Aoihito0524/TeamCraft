@@ -8,34 +8,37 @@
 import SwiftUI
 
 struct SelectTagView: View{
-    @Binding var selectedTags: [Tag]
+    @Binding var selectedTagsGroup: TagGroup
     var body: some View{
-        Rectangle()
         ForEach(TagGroup.allTags){tag in
-            TagButton(tag: tag, selectedTags: $selectedTags)
+            TagButton(tag: tag, selectedTagsGroup: $selectedTagsGroup)
         }
     }
 }
 
 struct TagButton: View{
     @State var tag: Tag
-    @Binding var selectedTags: [Tag]
+    @Binding var selectedTagsGroup: TagGroup
+    var tagIsSelected: Bool{
+        get{
+            return selectedTagsGroup.Contains(tag: tag)
+        }
+    }
     var body: some View{
         Button(action: {
             //選択済み -> 除外
-            if tag.isSelected{
-                selectedTags.removeAll(where : {
+            if tagIsSelected{
+                selectedTagsGroup.tags.removeAll(where : {
                     $0.tagName == tag.tagName
                 })
             }
             //新しく選択
             else{
-                selectedTags.append(tag)
+                selectedTagsGroup.tags.append(tag)
             }
-            tag.isSelected.toggle()
         }){
             TagLabel(tag: tag)
-                .scaleEffect(tag.isSelected ? 1.2 : 1)
+                .scaleEffect(tagIsSelected ? 1.2 : 1)
         }
     }
 }

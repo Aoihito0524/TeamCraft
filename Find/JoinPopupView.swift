@@ -14,6 +14,7 @@ struct JoinPopupView: View{
     var body: some View{
         VStack{
             Text("\(teamInfo.title)に参加しますか？")
+            Text("teamId: \(teamInfo.teamId)")
             Divider()
             HStack{
                 Button("参加する"){UserInformation.shared.JoinTeam(teamId: teamInfo.teamId)}

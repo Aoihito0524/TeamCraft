@@ -16,7 +16,7 @@ struct TeamView: View{
         }
         //それ以外
         else{
-            ChatView()
+            ChatView(teamId: userInformation.joinTeamIds[0])
         }
     }
 }

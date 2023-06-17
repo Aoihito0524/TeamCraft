@@ -9,8 +9,12 @@ import SwiftUI
 import FirebaseAuth
 
 struct ChatView: View{
-    @ObservedObject var ChatVM = ChatViewModel()
-    @State var textMessage = ""
+    let teamId: String
+    @ObservedObject var ChatVM: ChatViewModel
+    init(teamId: String){
+        self.teamId = teamId
+        ChatVM = ChatViewModel(teamId: teamId)
+    }
     var body: some View{
         ZStack{
             Rectangle().fill(Color.white)
@@ -20,10 +24,10 @@ struct ChatView: View{
                 }
                 Spacer()
                 HStack{
-                    TextField("", text: $textMessage)
+                    TextField("", text: $ChatVM.textMessage)
                     Button(action:
                             {
-                        ChatVM.AddMessage(message: textMessage, user: (Auth.auth().currentUser?.displayName)!)
+                        ChatVM.AddMessage(message: ChatVM.textMessage, user: (Auth.auth().currentUser?.displayName)!)
                     }
                     ){
                         Rectangle().fill(Color.blue).frame(width: DEVICE_WIDTH*0.1, height: DEVICE_HEIGHT*0.05)
@@ -39,7 +43,7 @@ struct MessageUI: View{
     let dateFormatter = DateFormatter()
     init(message: messageDataType){
         self.message = message
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssXXX"//"MM月dd日HH:mm"
     }
     var body: some View{
         VStack{

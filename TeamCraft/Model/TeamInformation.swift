@@ -19,11 +19,13 @@ class TeamInformation: ObservableObject, Identifiable{
     @Published var tags = TagGroup()
     @Published var keywords = [String]()
     init(){}
-    init(data: [String: Any]){
+    init(document: QueryDocumentSnapshot){
+        let data = document.data()
         //画像以外をロードする
         title = data["title"] as! String
         title = data["description"] as! String
         tags = TagGroup(StringArray: (data["tags"] as! [String]))
+        teamId = document.documentID as! String
         //画像がある場合はロードする
         imageURL = data["imageURL"] as? String
         if let urlString = imageURL, let url = URL(string: urlString){
@@ -35,7 +37,7 @@ class TeamInformation: ObservableObject, Identifiable{
             }
         }
     }
-    func saveImage() -> (StorageUploadTask, String){
+    func saveImage() -> StorageUploadTask{
         let reference = Storage.storage().reference()
         let path = "test.png"
         let imageRef = reference.child(path)
@@ -49,13 +51,12 @@ class TeamInformation: ObservableObject, Identifiable{
         uploadTask.observe(.failure) { _ in
             print("画像のアップロードに失敗しました")
         }
-        var urlString = ""
         imageRef.downloadURL { url, error in
             if let url = url {
-                urlString = url.absoluteString
+                self.imageURL = url.absoluteString
             }
         }
-        return (uploadTask, urlString)
+        return uploadTask
     }
     func SetKeywords(){
         //descriptionはキーワードに入れない。and検索ができないからkeywordsを厳選してもらう方針
@@ -93,9 +94,7 @@ class TeamInformation: ObservableObject, Identifiable{
             return;
         }
         //画像がある場合
-        let result = saveImage()
-        let uploadTask = result.0
-        imageURL = result.1
+        let uploadTask = saveImage()
         uploadTask.observe(.success) { _ in
             save_otherThanImage()
         }
@@ -109,6 +108,7 @@ class TeamInformation: ObservableObject, Identifiable{
             }
         }
         teamId = ref.documentID
+        db.collection("teamCommunication").document(teamId).setData([:]){_ in }
         save()
     }
 }

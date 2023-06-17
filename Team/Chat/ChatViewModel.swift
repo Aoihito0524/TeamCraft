@@ -9,12 +9,18 @@ import SwiftUI
 import FirebaseFirestore
 
 class ChatViewModel: ObservableObject{
+    let teamId: String
     @Published var group = groupDataType(groupId: "")
     @Published var messages = [messageDataType]()
-    init() {
+    @Published var textMessage = ""
+    let thisTeamCommunication: DocumentReference
+    init(teamId: String) {
+        self.teamId = teamId
         let db = Firestore.firestore()
+        thisTeamCommunication = db.collection("teamCommunication").document(teamId)
+        let messageCollection = thisTeamCommunication.collection("messages")
         //リアルタイム更新処理の登録
-        db.collection("messages").addSnapshotListener { (snap, error) in
+        messageCollection.addSnapshotListener { (snap, error) in
             if let error = error {
                 print(error.localizedDescription)
                 return
@@ -28,7 +34,7 @@ class ChatViewModel: ObservableObject{
                         let createdAt = i.document.get("createAt", serverTimestampBehavior: .estimate) as! Timestamp
                         let createDate = createdAt.dateValue()
                         let id = i.document.documentID
-                        
+
                         self.messages.append(messageDataType(groupId: self.group.groupId, id: id, userName: userName, message: message, createAt: createDate))
                     }
                 }
@@ -49,7 +55,7 @@ class ChatViewModel: ObservableObject{
         
         let db = Firestore.firestore()
         
-        db.collection("messages").addDocument(data: data) { error in
+        thisTeamCommunication.collection("messages").addDocument(data: data) { error in
             if let error = error {
                 print(error.localizedDescription)
                 return

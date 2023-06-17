@@ -102,8 +102,7 @@ class FindViewModel: ObservableObject{
             if let documents = snapshot?.documents{
                 print("\(documents.count)件ヒットしました")
                 for document in documents {
-                    let data = document.data()
-                    self.searchResults.append(TeamInformation(data: data))
+                    self.searchResults.append(TeamInformation(document: document))
                 }
             }
             else{

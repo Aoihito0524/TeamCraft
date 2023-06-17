@@ -19,7 +19,7 @@ struct CreateTeamView: View{
                 Button(action: {createTeamVM.isSelectingImage = true}){
                     ZStack{
                         Rectangle().fill(Color.gray).frame(width: DEVICE_WIDTH, height: DEVICE_WIDTH * 0.4)
-                        if let image = createTeamVM.teamImage{
+                        if let image = createTeamVM.teamInfo.image{
                             Image(uiImage: image)
                                 .resizable()
                                 .frame(width: DEVICE_WIDTH, height: DEVICE_WIDTH * 0.4)
@@ -27,28 +27,28 @@ struct CreateTeamView: View{
                     }
                 }
                 .sheet(isPresented: $createTeamVM.isSelectingImage){
-                    ImagePicker(image: $createTeamVM.teamImage)
+                    ImagePicker(image: $createTeamVM.teamInfo.image)
                 }
                 //タグ
                 NavigationLink{
-                    SelectTagView(selectedTags: $createTeamVM.teamTags)
+                    SelectTagView(selectedTagsGroup: $createTeamVM.teamInfo.tags)
                 } label: {
                     Text("タグを選ぶ")
                 }
-                ForEach(createTeamVM.teamTags){ tag in
+                ForEach(createTeamVM.teamInfo.tags.tags){ tag in
                     HStack{
                         TagLabel(tag: tag)
                     }
                 }
                 //タイトル
                 Text("タイトル")
-                TextField("タイトルを入力", text: $createTeamVM.teamTitle)
+                TextField("タイトルを入力", text: $createTeamVM.teamInfo.title)
                 //概要
                 HStack{
                     Text("概要")
                     Text("（検索には影響しません）")
                 }
-                TextField("概要を入力", text: $createTeamVM.teamDescription)
+                TextField("概要を入力", text: $createTeamVM.teamInfo.description)
                 Button(
                     action: {
                         createTeamVM.CreateTeam()
@@ -61,27 +61,12 @@ struct CreateTeamView: View{
         }
     }
 }
+
 class CreateTeamViewModel: ObservableObject{
     //Model
     @Published var teamInfo = TeamInformation()
     @Published var isSelectingImage = false
     //
-    var teamTitle: String{
-        get { return teamInfo.title }
-        set{ teamInfo.title = newValue }
-    }
-    var teamDescription: String{
-        get { return teamInfo.description }
-        set{ teamInfo.description = newValue }
-    }
-    var teamTags: [Tag]{
-        get { return teamInfo.tags.tags }
-        set{ teamInfo.tags.tags = newValue }
-    }
-    var teamImage: UIImage?{
-        get { return teamInfo.image }
-        set{ teamInfo.image = newValue }
-    }
     func CreateTeam(){
         teamInfo.register()
     }
