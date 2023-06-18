@@ -21,7 +21,7 @@ struct ChatView: View{
             Rectangle()
                 .fill(BACKGROUND_COLOR)
                 .ignoresSafeArea()
-            VStack{
+            VStack(spacing: 0){
                 TopBar_ChatView()
                 //メッセージ
                 ScrollView{
@@ -61,9 +61,7 @@ struct ChatView: View{
 struct TopBar_ChatView: View{
     var body: some View{
         HStack{
-            Image(systemName: "circle.fill")
-                .resizable()
-                .frame(width: DEVICE_HEIGHT * 0.07, height: DEVICE_HEIGHT * 0.07)
+            UserIcon(size: DEVICE_HEIGHT * 0.07)
                 .padding(DEVICE_HEIGHT * 0.03)
             HStack{
                 Text("チーム")

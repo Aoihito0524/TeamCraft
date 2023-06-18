@@ -10,12 +10,17 @@
 		7785D5493955C5CEFD9B3A63 /* Pods_TeamCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF590AC89079705AB96CD331 /* Pods_TeamCraft.framework */; };
 		9166AAC52A3DBBC000895164 /* TeamInformationUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAC42A3DBBC000895164 /* TeamInformationUI.swift */; };
 		9166AAC82A3EEC1A00895164 /* UserIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAC72A3EEC1A00895164 /* UserIcon.swift */; };
-		9166AACA2A3EEC2700895164 /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAC92A3EEC2700895164 /* TextFields.swift */; };
+		9166AACA2A3EEC2700895164 /* TextFieldTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAC92A3EEC2700895164 /* TextFieldTextures.swift */; };
+		9166AACE2A3FCC4800895164 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AACD2A3FCC4800895164 /* LoginView.swift */; };
+		9166AAD12A3FCE1A00895164 /* RegisterSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAD02A3FCE1A00895164 /* RegisterSettingView.swift */; };
+		9166AAD32A3FF72000895164 /* LoginByEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAD22A3FF72000895164 /* LoginByEmailView.swift */; };
+		9166AAD52A3FF76A00895164 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAD42A3FF76A00895164 /* PasswordField.swift */; };
+		9166AAD82A3FF92D00895164 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAD72A3FF92D00895164 /* AuthenticationView.swift */; };
 		916CC2DB2A31804B00B3A786 /* TeamCraftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */; };
 		916CC2DD2A31804B00B3A786 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916CC2DC2A31804B00B3A786 /* RegisterView.swift */; };
 		916CC2DF2A31804C00B3A786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2DE2A31804C00B3A786 /* Assets.xcassets */; };
 		916CC2E22A31804C00B3A786 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2E12A31804C00B3A786 /* Preview Assets.xcassets */; };
-		919007A02A318A0A002CD7B8 /* RegisterEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190079F2A318A0A002CD7B8 /* RegisterEmailView.swift */; };
+		919007A02A318A0A002CD7B8 /* RegisterByEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190079F2A318A0A002CD7B8 /* RegisterByEmailView.swift */; };
 		919007A12A318B22002CD7B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2E82A3185F900B3A786 /* GoogleService-Info.plist */; };
 		919007A32A31A58B002CD7B8 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A22A31A58B002CD7B8 /* Account.swift */; };
 		919007A52A31AC5D002CD7B8 /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */; };
@@ -45,14 +50,19 @@
 		6F8BA07EA3CD418A2204BAFF /* Pods-TeamCraft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamCraft.debug.xcconfig"; path = "Target Support Files/Pods-TeamCraft/Pods-TeamCraft.debug.xcconfig"; sourceTree = "<group>"; };
 		9166AAC42A3DBBC000895164 /* TeamInformationUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInformationUI.swift; sourceTree = "<group>"; };
 		9166AAC72A3EEC1A00895164 /* UserIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIcon.swift; sourceTree = "<group>"; };
-		9166AAC92A3EEC2700895164 /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
+		9166AAC92A3EEC2700895164 /* TextFieldTextures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTextures.swift; sourceTree = "<group>"; };
+		9166AACD2A3FCC4800895164 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		9166AAD02A3FCE1A00895164 /* RegisterSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSettingView.swift; sourceTree = "<group>"; };
+		9166AAD22A3FF72000895164 /* LoginByEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginByEmailView.swift; sourceTree = "<group>"; };
+		9166AAD42A3FF76A00895164 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
+		9166AAD72A3FF92D00895164 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		916CC2D72A31804B00B3A786 /* TeamCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCraftApp.swift; sourceTree = "<group>"; };
 		916CC2DC2A31804B00B3A786 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		916CC2DE2A31804C00B3A786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		916CC2E12A31804C00B3A786 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		916CC2E82A3185F900B3A786 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9190079F2A318A0A002CD7B8 /* RegisterEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterEmailView.swift; sourceTree = "<group>"; };
+		9190079F2A318A0A002CD7B8 /* RegisterByEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterByEmailView.swift; sourceTree = "<group>"; };
 		919007A22A31A58B002CD7B8 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
 		919007A72A31FC58002CD7B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -118,9 +128,41 @@
 		9166AACB2A3EEC3B00895164 /* 入力欄系 */ = {
 			isa = PBXGroup;
 			children = (
-				9166AAC92A3EEC2700895164 /* TextFields.swift */,
+				9166AAC92A3EEC2700895164 /* TextFieldTextures.swift */,
+				9166AAD42A3FF76A00895164 /* PasswordField.swift */,
 			);
 			path = "入力欄系";
+			sourceTree = "<group>";
+		};
+		9166AACC2A3F2A4300895164 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9166AACD2A3FCC4800895164 /* LoginView.swift */,
+				9166AAD22A3FF72000895164 /* LoginByEmailView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		9166AACF2A3FCDA600895164 /* RegisterSetting */ = {
+			isa = PBXGroup;
+			children = (
+				9166AAD02A3FCE1A00895164 /* RegisterSettingView.swift */,
+				919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */,
+				919007AD2A32002C002CD7B8 /* EmailVerificationFinishView.swift */,
+				919007A92A31FC9B002CD7B8 /* RegisterUserNameView.swift */,
+				919007AB2A31FE53002CD7B8 /* RegisterFinishView.swift */,
+			);
+			path = RegisterSetting;
+			sourceTree = "<group>";
+		};
+		9166AAD62A3FF8ED00895164 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				9166AAD72A3FF92D00895164 /* AuthenticationView.swift */,
+				919007A62A31FBE3002CD7B8 /* Register */,
+				9166AACC2A3F2A4300895164 /* Login */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		916CC2CE2A31804B00B3A786 = {
@@ -148,7 +190,8 @@
 				919007CF2A396EA9002CD7B8 /* Model */,
 				916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */,
 				919007A72A31FC58002CD7B8 /* ContentView.swift */,
-				919007A62A31FBE3002CD7B8 /* Register */,
+				9166AAD62A3FF8ED00895164 /* Authentication */,
+				9166AACF2A3FCDA600895164 /* RegisterSetting */,
 				919007AF2A33F409002CD7B8 /* Home */,
 				919007A22A31A58B002CD7B8 /* Account.swift */,
 				916CC2DE2A31804C00B3A786 /* Assets.xcassets */,
@@ -170,11 +213,7 @@
 			isa = PBXGroup;
 			children = (
 				916CC2DC2A31804B00B3A786 /* RegisterView.swift */,
-				9190079F2A318A0A002CD7B8 /* RegisterEmailView.swift */,
-				919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */,
-				919007AD2A32002C002CD7B8 /* EmailVerificationFinishView.swift */,
-				919007A92A31FC9B002CD7B8 /* RegisterUserNameView.swift */,
-				919007AB2A31FE53002CD7B8 /* RegisterFinishView.swift */,
+				9190079F2A318A0A002CD7B8 /* RegisterByEmailView.swift */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -383,7 +422,7 @@
 			files = (
 				919007AE2A32002C002CD7B8 /* EmailVerificationFinishView.swift in Sources */,
 				919007A52A31AC5D002CD7B8 /* EmailVerificationView.swift in Sources */,
-				919007A02A318A0A002CD7B8 /* RegisterEmailView.swift in Sources */,
+				919007A02A318A0A002CD7B8 /* RegisterByEmailView.swift in Sources */,
 				919007D52A396F34002CD7B8 /* TeamTag.swift in Sources */,
 				919007B12A33F430002CD7B8 /* HomeView.swift in Sources */,
 				919007B72A33F503002CD7B8 /* FindView.swift in Sources */,
@@ -395,16 +434,21 @@
 				919007BF2A3414D3002CD7B8 /* ChatView.swift in Sources */,
 				919007D12A396EB7002CD7B8 /* User.swift in Sources */,
 				919007C72A345D49002CD7B8 /* SelectTagView.swift in Sources */,
+				9166AAD82A3FF92D00895164 /* AuthenticationView.swift in Sources */,
+				9166AAD12A3FCE1A00895164 /* RegisterSettingView.swift in Sources */,
 				919007CC2A346A39002CD7B8 /* DefaultTeamView.swift in Sources */,
 				9166AAC82A3EEC1A00895164 /* UserIcon.swift in Sources */,
+				9166AAD52A3FF76A00895164 /* PasswordField.swift in Sources */,
 				919007AC2A31FE53002CD7B8 /* RegisterFinishView.swift in Sources */,
 				919007A32A31A58B002CD7B8 /* Account.swift in Sources */,
 				919007C12A34185A002CD7B8 /* ChatViewModel.swift in Sources */,
 				916CC2DD2A31804B00B3A786 /* RegisterView.swift in Sources */,
 				919007BD2A33F522002CD7B8 /* MyAccountView.swift in Sources */,
 				916CC2DB2A31804B00B3A786 /* TeamCraftApp.swift in Sources */,
+				9166AACE2A3FCC4800895164 /* LoginView.swift in Sources */,
+				9166AAD32A3FF72000895164 /* LoginByEmailView.swift in Sources */,
 				919007D32A396ED7002CD7B8 /* TeamInformation.swift in Sources */,
-				9166AACA2A3EEC2700895164 /* TextFields.swift in Sources */,
+				9166AACA2A3EEC2700895164 /* TextFieldTextures.swift in Sources */,
 				919007CE2A374961002CD7B8 /* JoinPopupView.swift in Sources */,
 				919007BB2A33F518002CD7B8 /* MailView.swift in Sources */,
 				919007B92A33F50F002CD7B8 /* TeamView.swift in Sources */,

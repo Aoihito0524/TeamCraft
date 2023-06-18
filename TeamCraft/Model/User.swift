@@ -15,6 +15,7 @@ class UserInformation: ObservableObject{
     static let shared = UserInformation()
     @Published var userId: String = ""
     @Published var joinTeamIds: [String] = []
+    @Published var joinedTeamIds: [String] = []
     init() {
         let db = Firestore.firestore()
         if let user = Auth.auth().currentUser{
@@ -25,7 +26,8 @@ class UserInformation: ObservableObject{
                     print("エラー発生: \(error.localizedDescription)")
                 }
                 if let snapshot = snapshot, snapshot.exists{
-                    self.joinTeamIds = snapshot.get("joinTeamIds") as! [String]
+                    self.joinTeamIds = snapshot.get("joinTeamIds") as? [String] ?? []
+                    self.joinedTeamIds = snapshot.get("joinedTeamIds") as? [String] ?? []
                 }
                 else{ //新規作成
                     self.save()
@@ -34,13 +36,19 @@ class UserInformation: ObservableObject{
         }
     }
     func JoinTeam(teamId: String){
-        joinTeamIds.append(teamId)
+        if !joinTeamIds.contains(teamId){
+            joinTeamIds.append(teamId)
+        }
+        if !joinedTeamIds.contains(teamId){
+            joinedTeamIds.append(teamId)
+        }
+
         save()
     }
     func save(){
         let db = Firestore.firestore()
         if let user = Auth.auth().currentUser{
-            let data = ["joinTeamIds": joinTeamIds] as [String : Any]
+            let data = ["joinTeamIds": joinTeamIds, "joinedTeamIds": joinedTeamIds] as [String : Any]
             db.collection("userInformation").document(userId).setData(data){ error in
                 if let error = error {
                     print(error.localizedDescription)

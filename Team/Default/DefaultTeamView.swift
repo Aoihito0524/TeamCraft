@@ -11,6 +11,9 @@ struct DefaultTeamView: View{
     @State var isCreatingTeam = false
     var body: some View{
         ZStack{
+            Rectangle()
+                .fill(BACKGROUND_COLOR)
+                .ignoresSafeArea()
             if !isCreatingTeam{
                 VStack{
                     Button(action: {
@@ -27,8 +30,8 @@ struct DefaultTeamView: View{
     }
 }
 
-struct RecruitPreview: PreviewProvider{
-    static var previews: some View{
-        DefaultTeamView()
-    }
-}
+//struct RecruitPreview: PreviewProvider{
+//    static var previews: some View{
+//        DefaultTeamView()
+//    }
+//}

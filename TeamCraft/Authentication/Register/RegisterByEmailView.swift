@@ -8,12 +8,12 @@
 import SwiftUI
 import FirebaseAuth
 
-struct RegisterEmailView: View{
+struct RegisterByEmailView: View{
+    @Binding var currentView: AuthenticationView.CurrentView
     @State var email: String = ""
     @State var password: String = ""
     @State var password_reenter: String = ""
     @State var errorOccured = false
-    @Binding var finishFlag: Bool
     @State var errorMessage = ""
     var body: some View{
         VStack{
@@ -46,8 +46,15 @@ struct RegisterEmailView: View{
                     .enterButtonTexture()
                     .padding(.bottom, DEVICE_HEIGHT * 0.046)
             }
+            HStack{
+                Spacer()
+                Button("ログインする"){
+                    currentView = AuthenticationView.CurrentView.loginByEmail
+                }
+                .padding(DEVICE_WIDTH * 0.05)
+            }
         }
-        .frame(width: DEVICE_WIDTH * 0.85, height: DEVICE_HEIGHT * 0.449)
+        .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
         .background(Color.white)
         .cornerRadius(10)
     }
@@ -68,53 +75,7 @@ struct RegisterEmailView: View{
                 }
             }
         } else {
-            finishFlag = true
-            print("新規登録に成功しました")
+            print("ログインに成功しました")
         }
-    }
-}
-
-struct PasswordField: View{
-    let message: String
-    @Binding var password: String
-    @State var visible = false
-    var body: some View{
-        ZStack(alignment: .trailing) {
-            TextField(message, text: $password)
-                .opacity(visible ? 1 : 0)
-            SecureField(message, text: $password)
-                .opacity(visible ? 0 : 1)
-            Button(action: {
-                visible.toggle()
-            }, label: {
-                Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
-                    .padding()
-                    .font(.system(size: 15))
-                
-            })
-        }
-    }
-}
-
-extension View {
-    func textFieldTexture() -> some View {
-        self.frame(width: DEVICE_WIDTH * 0.75, height: DEVICE_HEIGHT * 0.04)
-        .background(Color(red: 0.396, green: 0.737, blue: 0.929))
-        .cornerRadius(10)
-        .textFieldStyle(.roundedBorder)
-        .multilineTextAlignment(TextAlignment.center)
-        .overlay(RoundedRectangle(cornerRadius: 10)
-            .stroke(Color.black, lineWidth: 1)
-            .background(Color.clear))
-    }
-    func enterButtonTexture() -> some View {
-        self.frame(width: DEVICE_WIDTH * 0.75, height: DEVICE_HEIGHT * 0.04)
-        .background(Color(red: 0.396, green: 0.737, blue: 0.929))
-        .cornerRadius(10)
-        .textFieldStyle(.roundedBorder)
-        .multilineTextAlignment(TextAlignment.center)
-        .overlay(RoundedRectangle(cornerRadius: 10)
-            .stroke(Color.black, lineWidth: 1)
-            .background(Color.clear))
     }
 }

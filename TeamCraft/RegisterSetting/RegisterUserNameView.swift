@@ -15,7 +15,7 @@ struct RegisterUserNameView: View{
     var body: some View{
         VStack{
             Text("ユーザーネームを登録")
-                .font(.largeTitle)
+                .font(.title)
                 .padding(.vertical, DEVICE_HEIGHT * 0.05)
             TextField("名前を入力", text: $name)
                 .textFieldStyle(.roundedBorder)
@@ -29,9 +29,11 @@ struct RegisterUserNameView: View{
                     finishFlag.toggle()
                 }
             }
+            .frame(height: DEVICE_HEIGHT * 0.08)
         }
-        .cornerRadius(10)
+        .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
         .background(Color.white)
+        .cornerRadius(10)
     }
 }
 class RegisterUserNameViewModel{

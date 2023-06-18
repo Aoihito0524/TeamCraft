@@ -20,6 +20,5 @@ struct TeamView: View{
                 ChatView(teamId: userInformation.joinTeamIds[0])
             }
         }
-        .background(BACKGROUND_COLOR)
     }
 }
