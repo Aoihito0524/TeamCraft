@@ -11,7 +11,6 @@ struct TeamView: View{
     @ObservedObject var userInformation = UserInformation.shared
     var body: some View{
         ZStack(alignment: .top){
-            TopBar_ChatView()
             //チームに入ってない時
             if userInformation.joinTeamIds.count == 0{
                 DefaultTeamView()

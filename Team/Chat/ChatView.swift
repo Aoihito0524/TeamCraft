@@ -20,18 +20,20 @@ struct ChatView: View{
             //背景
             Rectangle()
                 .fill(BACKGROUND_COLOR)
-                .frame(width: DEVICE_WIDTH, height: DEVICE_HEIGHT)
                 .ignoresSafeArea()
-            //メッセージ
-            ScrollView{
-                LazyVStack{
-                    ForEach(ChatVM.messages){message in
-                        MessageUI(message: message)
+            VStack{
+                TopBar_ChatView()
+                //メッセージ
+                ScrollView{
+                    LazyVStack{
+                        ForEach(ChatVM.messages){message in
+                            MessageUI(message: message)
+                        }
                     }
+                    .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
                 }
-                .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
+                .background(Color.white.opacity(0.82))
             }
-            .background(Color.white.opacity(0.82))
             //メッセージ入力
             ZStack{
                 Rectangle().fill(Color.white)
