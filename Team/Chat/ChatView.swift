@@ -16,29 +16,68 @@ struct ChatView: View{
         ChatVM = ChatViewModel(teamId: teamId)
     }
     var body: some View{
-        ZStack{
-            Rectangle().fill(Color.white)
-            VStack{
-                ForEach(ChatVM.messages){message in
-                    MessageUI(message: message)
+        ZStack(alignment: .bottom){
+            //背景
+            Rectangle()
+                .fill(BACKGROUND_COLOR)
+                .frame(width: DEVICE_WIDTH, height: DEVICE_HEIGHT)
+                .ignoresSafeArea()
+            //メッセージ
+            ScrollView{
+                LazyVStack{
+                    ForEach(ChatVM.messages){message in
+                        MessageUI(message: message)
+                    }
                 }
-                Spacer()
+                .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
+            }
+            .background(Color.white.opacity(0.82))
+            //メッセージ入力
+            ZStack{
+                Rectangle().fill(Color.white)
+                    .frame(height: DEVICE_HEIGHT * 0.05)
                 HStack{
                     TextField("", text: $ChatVM.textMessage)
+                        .background(Color(red: 0.9, green: 0.9, blue: 0.9))
+                        .cornerRadius(15)
                     Button(action:
                             {
                         ChatVM.AddMessage(message: ChatVM.textMessage, user: (Auth.auth().currentUser?.displayName)!)
                     }
                     ){
-                        Rectangle().fill(Color.blue).frame(width: DEVICE_WIDTH*0.1, height: DEVICE_HEIGHT*0.05)
+                        Image(systemName: "paperplane")
+                            .foregroundColor(Color.blue)
                     }
                 }
+                .padding(.horizontal, DEVICE_WIDTH * 0.05)
             }
+            .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
         }
     }
 }
 
+struct TopBar_ChatView: View{
+    var body: some View{
+        HStack{
+            Image(systemName: "circle.fill")
+                .resizable()
+                .frame(width: DEVICE_HEIGHT * 0.07, height: DEVICE_HEIGHT * 0.07)
+                .padding(DEVICE_HEIGHT * 0.03)
+            HStack{
+                Text("チーム")
+                    .font(.title)
+                Image(systemName: "gearshape")
+                Image(systemName: "person")
+            }
+            .padding(.trailing, DEVICE_HEIGHT * 0.05)
+        }
+        .frame(width: DEVICE_WIDTH)
+        .background(Color.white.opacity(0.92))
+    }
+}
+
 struct MessageUI: View{
+    let messageWidth = DEVICE_WIDTH * 0.5
     let message: messageDataType
     let dateFormatter = DateFormatter()
     init(message: messageDataType){
@@ -46,12 +85,35 @@ struct MessageUI: View{
         dateFormatter.dateFormat = "MM月dd日HH:mm"//"yyyy-MM-dd'T'HH:mm:ssXXX"//
     }
     var body: some View{
-        VStack{
-            Text(dateFormatter.string(from: message.createAt))
-            Text(message.message)
-                .background(Color.green)
-                .cornerRadius(20)
+        ZStack(alignment: isMyMessage() ? .trailing : .leading){
+            Color.clear.frame(width: VERTICAL_SCROLLPANEL_WIDTH)
+            VStack(alignment: isMyMessage() ? .trailing : .leading){
+                //アイコンと名前
+                if isMyMessage(){
+                    HStack{
+                        UserIcon(size: DEVICE_HEIGHT * 0.02)
+                        Text(message.userName)
+                    }
+                }
+                //テキスト本体
+                ZStack{
+                    RoundedRectangle(cornerRadius: 20)
+                        .fill(Color.green)
+                    Text(message.message)
+                        .font(.body)
+                        .lineLimit(nil)
+                        //そのままだと字が欠けるため少し大きめに
+                        .padding(.all, DEVICE_WIDTH * 0.01)
+                }
+                //送信日時
+                Text(dateFormatter.string(from: message.createAt))
+                    .font(.caption)
+            }
+            .frame(width: messageWidth)
         }
+    }
+    func isMyMessage() -> Bool{
+        return message.userName == Auth.auth().currentUser?.displayName
     }
 }
 

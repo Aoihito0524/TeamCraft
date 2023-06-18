@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		7785D5493955C5CEFD9B3A63 /* Pods_TeamCraft.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF590AC89079705AB96CD331 /* Pods_TeamCraft.framework */; };
 		9166AAC52A3DBBC000895164 /* TeamInformationUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAC42A3DBBC000895164 /* TeamInformationUI.swift */; };
+		9166AAC82A3EEC1A00895164 /* UserIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAC72A3EEC1A00895164 /* UserIcon.swift */; };
+		9166AACA2A3EEC2700895164 /* TextFields.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAC92A3EEC2700895164 /* TextFields.swift */; };
 		916CC2DB2A31804B00B3A786 /* TeamCraftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */; };
 		916CC2DD2A31804B00B3A786 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916CC2DC2A31804B00B3A786 /* RegisterView.swift */; };
 		916CC2DF2A31804C00B3A786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2DE2A31804C00B3A786 /* Assets.xcassets */; };
@@ -42,6 +44,8 @@
 		0433CC7FF912674C8BB829F2 /* Pods-TeamCraft.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamCraft.release.xcconfig"; path = "Target Support Files/Pods-TeamCraft/Pods-TeamCraft.release.xcconfig"; sourceTree = "<group>"; };
 		6F8BA07EA3CD418A2204BAFF /* Pods-TeamCraft.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TeamCraft.debug.xcconfig"; path = "Target Support Files/Pods-TeamCraft/Pods-TeamCraft.debug.xcconfig"; sourceTree = "<group>"; };
 		9166AAC42A3DBBC000895164 /* TeamInformationUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamInformationUI.swift; sourceTree = "<group>"; };
+		9166AAC72A3EEC1A00895164 /* UserIcon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserIcon.swift; sourceTree = "<group>"; };
+		9166AAC92A3EEC2700895164 /* TextFields.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFields.swift; sourceTree = "<group>"; };
 		916CC2D72A31804B00B3A786 /* TeamCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCraftApp.swift; sourceTree = "<group>"; };
 		916CC2DC2A31804B00B3A786 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -102,6 +106,23 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		9166AAC62A3EEBF300895164 /* 汎用View */ = {
+			isa = PBXGroup;
+			children = (
+				9166AAC72A3EEC1A00895164 /* UserIcon.swift */,
+				9166AACB2A3EEC3B00895164 /* 入力欄系 */,
+			);
+			path = "汎用View";
+			sourceTree = "<group>";
+		};
+		9166AACB2A3EEC3B00895164 /* 入力欄系 */ = {
+			isa = PBXGroup;
+			children = (
+				9166AAC92A3EEC2700895164 /* TextFields.swift */,
+			);
+			path = "入力欄系";
+			sourceTree = "<group>";
+		};
 		916CC2CE2A31804B00B3A786 = {
 			isa = PBXGroup;
 			children = (
@@ -123,6 +144,7 @@
 		916CC2D92A31804B00B3A786 /* TeamCraft */ = {
 			isa = PBXGroup;
 			children = (
+				9166AAC62A3EEBF300895164 /* 汎用View */,
 				919007CF2A396EA9002CD7B8 /* Model */,
 				916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */,
 				919007A72A31FC58002CD7B8 /* ContentView.swift */,
@@ -374,6 +396,7 @@
 				919007D12A396EB7002CD7B8 /* User.swift in Sources */,
 				919007C72A345D49002CD7B8 /* SelectTagView.swift in Sources */,
 				919007CC2A346A39002CD7B8 /* DefaultTeamView.swift in Sources */,
+				9166AAC82A3EEC1A00895164 /* UserIcon.swift in Sources */,
 				919007AC2A31FE53002CD7B8 /* RegisterFinishView.swift in Sources */,
 				919007A32A31A58B002CD7B8 /* Account.swift in Sources */,
 				919007C12A34185A002CD7B8 /* ChatViewModel.swift in Sources */,
@@ -381,6 +404,7 @@
 				919007BD2A33F522002CD7B8 /* MyAccountView.swift in Sources */,
 				916CC2DB2A31804B00B3A786 /* TeamCraftApp.swift in Sources */,
 				919007D32A396ED7002CD7B8 /* TeamInformation.swift in Sources */,
+				9166AACA2A3EEC2700895164 /* TextFields.swift in Sources */,
 				919007CE2A374961002CD7B8 /* JoinPopupView.swift in Sources */,
 				919007BB2A33F518002CD7B8 /* MailView.swift in Sources */,
 				919007B92A33F50F002CD7B8 /* TeamView.swift in Sources */,

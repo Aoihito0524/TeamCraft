@@ -24,6 +24,8 @@ struct FindView: View{
                         }
                         Divider()
                     }
+                    .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
+                    .background(Color.white)
                 }
             }
             if let clickedTeamInfo = findVM.clickedTeamInfo{
@@ -38,27 +40,12 @@ struct TopBar_FindView: View{
     let DoSearch: ()->()
     var body: some View{
         HStack{
-            Image(systemName: "circle.fill")
-                .resizable()
-                .frame(width: DEVICE_HEIGHT * 0.07, height: DEVICE_HEIGHT * 0.07)
+            UserIcon(size: DEVICE_HEIGHT * 0.07)
                 .padding(DEVICE_HEIGHT * 0.03)
             VStack{
                 Text("探す")
                     .font(.title)
-                HStack{
-                    HStack{
-                        Image(systemName: "magnifyingglass")
-                        TextField("検索", text: $searchText)
-                    }
-                    .background(Color(red: 0.9, green: 0.9, blue: 0.9))
-                    .cornerRadius(10)
-                    .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidHideNotification)) { _ in
-                        DoSearch()
-                    }
-//                    Button("検索"){
-//                        DoSearch()
-//                    }
-                }
+                SearchField(searchText: $searchText, DoSearch: DoSearch)
             }
             .padding(.trailing, DEVICE_HEIGHT * 0.05)
         }
@@ -66,6 +53,21 @@ struct TopBar_FindView: View{
     }
 }
 
+struct SearchField: View{
+    @Binding var searchText: String
+    let DoSearch: () -> ()
+    var body: some View{
+        HStack{
+            Image(systemName: "magnifyingglass")
+            TextField("検索", text: $searchText)
+                .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidHideNotification)) { _ in
+                    DoSearch()
+                }
+        }
+        .background(Color(red: 0.9, green: 0.9, blue: 0.9))
+        .cornerRadius(10)
+    }
+}
 class FindViewModel: ObservableObject{
     @Published var searchText = ""
     @Published var searchResults = [TeamInformation]()

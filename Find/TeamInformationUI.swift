@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct teamInformationUI: View{
-    let width = DEVICE_WIDTH*0.869
     @ObservedObject var teamInfo: TeamInformation //imageのロード前後に観測が必要 -> observed
     @Binding var clickedTeamInfo: TeamInformation?
     var body: some View{
@@ -16,7 +15,7 @@ struct teamInformationUI: View{
             if let image = teamInfo.image{
                 Image(uiImage: image)
                     .resizable()
-                    .frame(width: width, height: TeamInformation.ImageHeight(width: width))
+                    .frame(width: VERTICAL_SCROLLPANEL_WIDTH, height: TeamInformation.ImageHeight(width: VERTICAL_SCROLLPANEL_WIDTH))
             }
             Group{
                 HStack{
@@ -26,18 +25,19 @@ struct teamInformationUI: View{
                     }
                     //その横にタイトル
                     Text(teamInfo.title)
-                        .font(.title3)
+                        .font(.headline)
                 }
-                .padding(.bottom, DEVICE_HEIGHT * 0.02)
+                .padding(.vertical, DEVICE_HEIGHT * 0.007)
                 Text(teamInfo.description)
                     .font(.body)
                     .lineLimit(5)
+                    .frame(maxHeight: DEVICE_HEIGHT * 0.15)
                 Spacer()
             }
-            .padding(.leading, DEVICE_WIDTH * 0.03)
+            .padding(.leading, DEVICE_WIDTH * 0.04)
+            .padding(.bottom, DEVICE_HEIGHT * 0.005)
         }
-        .frame(width: width)
-        .frame(maxHeight: DEVICE_HEIGHT * 0.3)
+        .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
         .background(Color.white)
         .onTapGesture{
             clickedTeamInfo = teamInfo

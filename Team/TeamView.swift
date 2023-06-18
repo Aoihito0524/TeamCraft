@@ -10,13 +10,17 @@ import SwiftUI
 struct TeamView: View{
     @ObservedObject var userInformation = UserInformation.shared
     var body: some View{
-        //チームに入ってない時
-        if userInformation.joinTeamIds.count == 0{
-            DefaultTeamView()
+        ZStack(alignment: .top){
+            TopBar_ChatView()
+            //チームに入ってない時
+            if userInformation.joinTeamIds.count == 0{
+                DefaultTeamView()
+            }
+            //それ以外
+            else{
+                ChatView(teamId: userInformation.joinTeamIds[0])
+            }
         }
-        //それ以外
-        else{
-            ChatView(teamId: userInformation.joinTeamIds[0])
-        }
+        .background(BACKGROUND_COLOR)
     }
 }
