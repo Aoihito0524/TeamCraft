@@ -9,8 +9,8 @@ import SwiftUI
 import FirebaseFirestore
 import FirebaseAuth
 
-//ユーザークラスは肥大化しやすいため、このクラスはデータとその基本処理にとどめる。
-//ViewModelはこのクラスではなく他のクラスからこのクラスの要素に間接的にアクセスする
+//ユーザークラスは責務が大きくなりやすいため、このクラスはデータとその基本処理にとどめたい
+//ViewModelはこのクラスではなく他のクラスからこのクラスの要素に間接的にアクセスしたい
 class UserInformation: ObservableObject{
     static let shared = UserInformation()
     @Published var userId: String = ""

@@ -89,7 +89,7 @@ struct MessageUI: View{
             Color.clear.frame(width: VERTICAL_SCROLLPANEL_WIDTH)
             VStack(alignment: isMyMessage() ? .trailing : .leading){
                 //アイコンと名前
-                if isMyMessage(){
+                if !isMyMessage(){
                     HStack{
                         UserIcon(size: DEVICE_HEIGHT * 0.02)
                         Text(message.userName)

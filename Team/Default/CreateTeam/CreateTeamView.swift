@@ -104,5 +104,6 @@ class CreateTeamViewModel: ObservableObject{
     @Published var retryMessage: String?
     func CreateTeam(){
         teamInfo.register()
+        UserInformation.shared.JoinTeam(teamId: teamInfo.teamId)
     }
 }

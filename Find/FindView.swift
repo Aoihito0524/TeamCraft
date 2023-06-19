@@ -29,7 +29,7 @@ struct FindView: View{
                 }
             }
             if let clickedTeamInfo = findVM.clickedTeamInfo{
-                JoinPopupView(teamInfo: clickedTeamInfo)
+                JoinPopupView(closePopup: findVM.CloseJoinPopup, teamInfo: clickedTeamInfo)
             }
         }
     }
@@ -76,6 +76,9 @@ class FindViewModel: ObservableObject{
         let keywords = GetKeywords(input: searchText)
         if keywords == []{return;}
         SearchByKeywards(keywords: keywords)
+    }
+    func CloseJoinPopup(){
+        clickedTeamInfo = nil
     }
     private func GetKeywords(input: String) -> [String]{
         let pattern = "([^\\s　]+)"
