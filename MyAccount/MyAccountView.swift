@@ -60,6 +60,7 @@ struct AccountInformationView: View{
                         Text("自己紹介文")
                             .font(.caption)
                         TextField("", text: $SelfIntroduction)
+                            .lineLimit(nil)
                             .frame(minHeight: DEVICE_HEIGHT * 0.1)
                             .overlay(Rectangle().stroke(Color.gray, lineWidth: 1))
                     }
