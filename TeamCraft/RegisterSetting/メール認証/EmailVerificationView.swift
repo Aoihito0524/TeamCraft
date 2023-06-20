@@ -11,6 +11,7 @@ import FirebaseAuth
 struct EmailVelificationView: View{
     @Binding var finishFlag: Bool
     @Binding var backFlag: Bool
+    @ObservedObject var VM = EmailVerificationViewMode()
     var body: some View{
         VStack(){
             Text("認証メールを送信しました")
@@ -32,7 +33,7 @@ struct EmailVelificationView: View{
                 .font(.title2)
                 .accentColor(Color.black)
                 Button("再送信"){
-                    SendVerification()
+                    VM.SendVerification()
                 }
                 .font(.title2)
                 .accentColor(Color.black)
@@ -44,33 +45,8 @@ struct EmailVelificationView: View{
         .cornerRadius(10)
         .onAppear{
             if !(Auth.auth().currentUser?.isEmailVerified)!{
-                Add_WhenEndVerification()
-                SendVerification()
-            }
-        }
-    }
-    func Add_WhenEndVerification(){
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-            if let user = Auth.auth().currentUser{
-                user.reload{ error in
-
-                }
-                print(user.isEmailVerified)
-                if user.isEmailVerified{
-                    timer.invalidate()
-                    finishFlag.toggle()
-                }
-            }
-        }
-    }
-    func SendVerification(){
-        if let user = Auth.auth().currentUser {
-            user.sendEmailVerification { (error) in
-                if let error = error {
-                    print("確認メールの送信に失敗しました：\(error.localizedDescription)")
-                } else {
-                    print("確認メールを送信しました")
-                }
+                VM.SetTimer_forCheckIsVerified(onVerified: {finishFlag.toggle()})
+                VM.SendVerification()
             }
         }
     }

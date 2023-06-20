@@ -22,7 +22,6 @@
 		916CC2E22A31804C00B3A786 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2E12A31804C00B3A786 /* Preview Assets.xcassets */; };
 		919007A02A318A0A002CD7B8 /* RegisterByEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190079F2A318A0A002CD7B8 /* RegisterByEmailView.swift */; };
 		919007A12A318B22002CD7B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2E82A3185F900B3A786 /* GoogleService-Info.plist */; };
-		919007A32A31A58B002CD7B8 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A22A31A58B002CD7B8 /* Account.swift */; };
 		919007A52A31AC5D002CD7B8 /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */; };
 		919007A82A31FC58002CD7B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A72A31FC58002CD7B8 /* ContentView.swift */; };
 		919007AA2A31FC9B002CD7B8 /* RegisterUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A92A31FC9B002CD7B8 /* RegisterUserNameView.swift */; };
@@ -46,6 +45,8 @@
 		91F038E42A412A1C00A3B7F6 /* RegisterByEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038E32A412A1C00A3B7F6 /* RegisterByEmailViewModel.swift */; };
 		91F038E72A412A9F00A3B7F6 /* LoginByEmailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038E62A412A9F00A3B7F6 /* LoginByEmailViewModel.swift */; };
 		91F038EA2A412C9300A3B7F6 /* RegisterSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038E92A412C9300A3B7F6 /* RegisterSettingViewModel.swift */; };
+		91F038EE2A412FEC00A3B7F6 /* EmailVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038ED2A412FEC00A3B7F6 /* EmailVerificationViewModel.swift */; };
+		91F038F22A4130E400A3B7F6 /* RegisterUserNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038F12A4130E400A3B7F6 /* RegisterUserNameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,7 +67,6 @@
 		916CC2E12A31804C00B3A786 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		916CC2E82A3185F900B3A786 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9190079F2A318A0A002CD7B8 /* RegisterByEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterByEmailView.swift; sourceTree = "<group>"; };
-		919007A22A31A58B002CD7B8 /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
 		919007A72A31FC58002CD7B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		919007A92A31FC9B002CD7B8 /* RegisterUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserNameView.swift; sourceTree = "<group>"; };
@@ -90,6 +90,8 @@
 		91F038E32A412A1C00A3B7F6 /* RegisterByEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterByEmailViewModel.swift; sourceTree = "<group>"; };
 		91F038E62A412A9F00A3B7F6 /* LoginByEmailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginByEmailViewModel.swift; sourceTree = "<group>"; };
 		91F038E92A412C9300A3B7F6 /* RegisterSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSettingViewModel.swift; sourceTree = "<group>"; };
+		91F038ED2A412FEC00A3B7F6 /* EmailVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationViewModel.swift; sourceTree = "<group>"; };
+		91F038F12A4130E400A3B7F6 /* RegisterUserNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserNameViewModel.swift; sourceTree = "<group>"; };
 		BF590AC89079705AB96CD331 /* Pods_TeamCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -153,10 +155,10 @@
 			isa = PBXGroup;
 			children = (
 				91F038E82A412B1000A3B7F6 /* RegisterSettingView */,
-				919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */,
-				919007AD2A32002C002CD7B8 /* EmailVerificationFinishView.swift */,
-				919007A92A31FC9B002CD7B8 /* RegisterUserNameView.swift */,
-				919007AB2A31FE53002CD7B8 /* RegisterFinishView.swift */,
+				91F038EB2A412F3800A3B7F6 /* メール認証 */,
+				91F038EF2A41302000A3B7F6 /* メール認証完了画面 */,
+				91F038F02A41303100A3B7F6 /* ユーザー名登録 */,
+				91F038F32A4130F400A3B7F6 /* 全登録完了画面 */,
 			);
 			path = RegisterSetting;
 			sourceTree = "<group>";
@@ -192,14 +194,13 @@
 		916CC2D92A31804B00B3A786 /* TeamCraft */ = {
 			isa = PBXGroup;
 			children = (
-				9166AAC62A3EEBF300895164 /* 汎用View */,
-				919007CF2A396EA9002CD7B8 /* Model */,
 				916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */,
 				919007A72A31FC58002CD7B8 /* ContentView.swift */,
+				9166AAC62A3EEBF300895164 /* 汎用View */,
+				919007CF2A396EA9002CD7B8 /* Model */,
 				9166AAD62A3FF8ED00895164 /* Authentication */,
 				9166AACF2A3FCDA600895164 /* RegisterSetting */,
 				919007AF2A33F409002CD7B8 /* Home */,
-				919007A22A31A58B002CD7B8 /* Account.swift */,
 				916CC2DE2A31804C00B3A786 /* Assets.xcassets */,
 				916CC2E82A3185F900B3A786 /* GoogleService-Info.plist */,
 				916CC2E02A31804C00B3A786 /* Preview Content */,
@@ -340,6 +341,41 @@
 			path = RegisterSettingView;
 			sourceTree = "<group>";
 		};
+		91F038EB2A412F3800A3B7F6 /* メール認証 */ = {
+			isa = PBXGroup;
+			children = (
+				919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */,
+				91F038ED2A412FEC00A3B7F6 /* EmailVerificationViewModel.swift */,
+			);
+			path = "メール認証";
+			sourceTree = "<group>";
+		};
+		91F038EF2A41302000A3B7F6 /* メール認証完了画面 */ = {
+			isa = PBXGroup;
+			children = (
+				919007AD2A32002C002CD7B8 /* EmailVerificationFinishView.swift */,
+			);
+			path = "メール認証完了画面";
+			sourceTree = "<group>";
+		};
+		91F038F02A41303100A3B7F6 /* ユーザー名登録 */ = {
+			isa = PBXGroup;
+			children = (
+				919007A92A31FC9B002CD7B8 /* RegisterUserNameView.swift */,
+				91F038F12A4130E400A3B7F6 /* RegisterUserNameViewModel.swift */,
+			);
+			name = "ユーザー名登録";
+			path = "ユーザー名登録";
+			sourceTree = "<group>";
+		};
+		91F038F32A4130F400A3B7F6 /* 全登録完了画面 */ = {
+			isa = PBXGroup;
+			children = (
+				919007AB2A31FE53002CD7B8 /* RegisterFinishView.swift */,
+			);
+			path = "全登録完了画面";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -455,6 +491,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91F038EE2A412FEC00A3B7F6 /* EmailVerificationViewModel.swift in Sources */,
 				919007AE2A32002C002CD7B8 /* EmailVerificationFinishView.swift in Sources */,
 				919007A52A31AC5D002CD7B8 /* EmailVerificationView.swift in Sources */,
 				919007A02A318A0A002CD7B8 /* RegisterByEmailView.swift in Sources */,
@@ -469,6 +506,7 @@
 				919007C92A345FCA002CD7B8 /* ImagePicker.swift in Sources */,
 				919007A82A31FC58002CD7B8 /* ContentView.swift in Sources */,
 				919007BF2A3414D3002CD7B8 /* ChatView.swift in Sources */,
+				91F038F22A4130E400A3B7F6 /* RegisterUserNameViewModel.swift in Sources */,
 				919007D12A396EB7002CD7B8 /* User.swift in Sources */,
 				919007C72A345D49002CD7B8 /* SelectTagView.swift in Sources */,
 				9166AAD82A3FF92D00895164 /* AuthenticationView.swift in Sources */,
@@ -477,7 +515,6 @@
 				9166AAC82A3EEC1A00895164 /* UserIcon.swift in Sources */,
 				9166AAD52A3FF76A00895164 /* PasswordField.swift in Sources */,
 				919007AC2A31FE53002CD7B8 /* RegisterFinishView.swift in Sources */,
-				919007A32A31A58B002CD7B8 /* Account.swift in Sources */,
 				91F038E42A412A1C00A3B7F6 /* RegisterByEmailViewModel.swift in Sources */,
 				919007C12A34185A002CD7B8 /* ChatViewModel.swift in Sources */,
 				916CC2DD2A31804B00B3A786 /* RegisterView.swift in Sources */,
