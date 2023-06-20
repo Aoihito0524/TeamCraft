@@ -20,7 +20,6 @@ class ImageManager: ObservableObject{
                 DispatchQueue.main.async {
                     self.image = UIImage(data: data)
                     print("imageLoaded")
-                    print(self.image)
                 }
             }.resume()
         }

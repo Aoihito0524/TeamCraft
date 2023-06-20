@@ -21,30 +21,33 @@ struct CreateTeamView: View{
                 VStack(spacing: 0){
                     TopBar_CreateTeamView()
                     ScrollView{
-                        VStack(alignment: .leading, spacing: DEVICE_HEIGHT * 0.05){
+                        VStack(alignment: .leading, spacing: DEVICE_HEIGHT * 0.06){
                             Rectangle().fill(Color.clear)
                                 .frame(height: DEVICE_HEIGHT * 0.03)
                             if let message = VM.retryMessage{
                                 Text(message)
                             }
-                            //画像
+                            //画像 こいつはpaddingすると画像もずれてダメ
                             SelectHeadlineImage(isSelectingImage: $VM.isSelectingImage, image: $VM.teamInfo.image.image)
-                            //タイトル
-                            CreateTitleTextField(titleText: $VM.teamInfo.title)
-                                .padding(.leading, DEVICE_WIDTH * 0.1)
-                            //タグ
-                            SelectTagRow(tagGroup: $VM.teamInfo.tags)
-                                .padding(.leading, DEVICE_WIDTH * 0.1)
-                            //概要
-                            DescriptionTextField(descriptionText: $VM.teamInfo.description)
-                                .padding(.leading, DEVICE_WIDTH * 0.1)
+                            Group{
+                                //タイトル
+                                CreateTitleTextField(titleText: $VM.teamInfo.title)
+                                //タグ
+                                SelectTagRow(tagGroup: $VM.teamInfo.tags)
+                                //概要
+                                DescriptionTextField(descriptionText: $VM.teamInfo.description)
+                                //人数と役割
+                                TeamRolesRow(teamRoles: $VM.teamInfo.teamRoles)
+                                //準備期間
+                                PrepareDurationPicker(prepareDays: $VM.teamInfo.prepareDays)
+                            }
+                            .padding(.leading, DEVICE_WIDTH * 0.1)
                             //チーム作成ボタン
                             HStack{
                                 Spacer()
                                 CreateTeamButton(VM: VM, isCreatingTeam: $isCreatingTeam)
                                 Spacer()
                             }
-                            .padding(.leading, DEVICE_WIDTH * 0.1)
                             .padding(.bottom, DEVICE_HEIGHT * 0.05)
                         }
                         .frame(width: VERTICAL_SCROLLPANEL_WIDTH)

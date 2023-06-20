@@ -65,6 +65,8 @@
 		91F039172A416EAA00A3B7F6 /* DescriptionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039162A416EAA00A3B7F6 /* DescriptionTextField.swift */; };
 		91F039192A416F1F00A3B7F6 /* SelectHeadlineImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039182A416F1F00A3B7F6 /* SelectHeadlineImage.swift */; };
 		91F0391B2A4172B500A3B7F6 /* CreateTeamButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0391A2A4172B500A3B7F6 /* CreateTeamButton.swift */; };
+		91F0391D2A41832000A3B7F6 /* TeamRolesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0391C2A41832000A3B7F6 /* TeamRolesRow.swift */; };
+		91F0391F2A418B7200A3B7F6 /* PrepareDurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0391E2A418B7200A3B7F6 /* PrepareDurationPicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -128,6 +130,8 @@
 		91F039162A416EAA00A3B7F6 /* DescriptionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextField.swift; sourceTree = "<group>"; };
 		91F039182A416F1F00A3B7F6 /* SelectHeadlineImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHeadlineImage.swift; sourceTree = "<group>"; };
 		91F0391A2A4172B500A3B7F6 /* CreateTeamButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamButton.swift; sourceTree = "<group>"; };
+		91F0391C2A41832000A3B7F6 /* TeamRolesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRolesRow.swift; sourceTree = "<group>"; };
+		91F0391E2A418B7200A3B7F6 /* PrepareDurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDurationPicker.swift; sourceTree = "<group>"; };
 		BF590AC89079705AB96CD331 /* Pods_TeamCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -328,6 +332,8 @@
 			isa = PBXGroup;
 			children = (
 				919007C42A345C72002CD7B8 /* CreateTeamView.swift */,
+				91F0391E2A418B7200A3B7F6 /* PrepareDurationPicker.swift */,
+				91F0391C2A41832000A3B7F6 /* TeamRolesRow.swift */,
 				91F0391A2A4172B500A3B7F6 /* CreateTeamButton.swift */,
 				91F039182A416F1F00A3B7F6 /* SelectHeadlineImage.swift */,
 				91F039162A416EAA00A3B7F6 /* DescriptionTextField.swift */,
@@ -594,6 +600,7 @@
 				91F039052A41340400A3B7F6 /* NumJoinedTeamText.swift in Sources */,
 				919007C92A345FCA002CD7B8 /* ImagePicker.swift in Sources */,
 				919007A82A31FC58002CD7B8 /* ContentView.swift in Sources */,
+				91F0391F2A418B7200A3B7F6 /* PrepareDurationPicker.swift in Sources */,
 				919007BF2A3414D3002CD7B8 /* ChatView.swift in Sources */,
 				91F039092A41352F00A3B7F6 /* LogOutButton.swift in Sources */,
 				91F038F22A4130E400A3B7F6 /* RegisterUserNameViewModel.swift in Sources */,
@@ -622,6 +629,7 @@
 				91F038FA2A4131F700A3B7F6 /* TopBar_FindView.swift in Sources */,
 				919007BD2A33F522002CD7B8 /* MyAccountView.swift in Sources */,
 				916CC2DB2A31804B00B3A786 /* TeamCraftApp.swift in Sources */,
+				91F0391D2A41832000A3B7F6 /* TeamRolesRow.swift in Sources */,
 				9166AACE2A3FCC4800895164 /* LoginView.swift in Sources */,
 				9166AAD32A3FF72000895164 /* LoginByEmailView.swift in Sources */,
 				919007D32A396ED7002CD7B8 /* TeamInformation.swift in Sources */,

@@ -20,6 +20,8 @@ class TeamInformation: ObservableObject, Identifiable{
     @Published var description = ""
     @Published var tags = TagGroup()
     @Published var keywords = [String]()
+    @Published var teamRoles = [(String, Int?)]()
+    @Published var prepareDays = 7
     init(){}
     init(document: QueryDocumentSnapshot){
         let data = document.data()
@@ -28,6 +30,8 @@ class TeamInformation: ObservableObject, Identifiable{
         description = data["description"] as! String
         tags = TagGroup(StringArray: (data["tags"] as! [String]))
         teamId = document.documentID
+        teamRoles = data["teamRoles"] as! [(String, Int)]
+        prepareDays = data["prepareDays"] as! Int
         //画像がある場合はロードする
         let imageURL = data["imageURL"] as? String
         image.loadImage(url: imageURL)
@@ -58,7 +62,9 @@ class TeamInformation: ObservableObject, Identifiable{
                 "title": title,
                 "description": description,
                 "tags": tags.StringArray(),
-                "keywords": keywords
+                "keywords": keywords,
+                "teanRoles": teamRoles,
+                "prepareDays": prepareDays
             ] as [String : Any]
             db.collection("teamInformation").document(teamId).setData(data)
         }
