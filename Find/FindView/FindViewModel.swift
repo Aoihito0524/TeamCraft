@@ -1,73 +1,13 @@
 //
-//  FindView.swift
+//  FindViewModel.swift
 //  TeamCraft
 //
-//  Created by 木村友祐 on 2023/06/10.
+//  Created by 木村友祐 on 2023/06/20.
 //
 
 import SwiftUI
 import FirebaseFirestore
 
-struct FindView: View{
-    @ObservedObject var findVM = FindViewModel()
-    var body: some View{
-        ZStack{
-            Rectangle()
-                .fill(BACKGROUND_COLOR)
-                .ignoresSafeArea()
-            VStack{
-                TopBar_FindView(searchText: $findVM.searchText, DoSearch: findVM.Search)
-                ScrollView{
-                    LazyVStack{
-                        ForEach(findVM.searchResults){ teamInfo in
-                            teamInformationUI(teamInfo: teamInfo, clickedTeamInfo: $findVM.clickedTeamInfo)
-                        }
-                        Divider()
-                    }
-                    .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
-                    .background(Color.white)
-                }
-            }
-            if let clickedTeamInfo = findVM.clickedTeamInfo{
-                JoinPopupView(closePopup: findVM.CloseJoinPopup, teamInfo: clickedTeamInfo)
-            }
-        }
-    }
-}
-
-struct TopBar_FindView: View{
-    @Binding var searchText: String
-    let DoSearch: ()->()
-    var body: some View{
-        HStack{
-            UserIcon(size: DEVICE_HEIGHT * 0.07)
-                .padding(DEVICE_HEIGHT * 0.03)
-            VStack{
-                Text("探す")
-                    .font(.title)
-                SearchField(searchText: $searchText, DoSearch: DoSearch)
-            }
-            .padding(.trailing, DEVICE_HEIGHT * 0.05)
-        }
-        .background(Color.white.opacity(0.92))
-    }
-}
-
-struct SearchField: View{
-    @Binding var searchText: String
-    let DoSearch: () -> ()
-    var body: some View{
-        HStack{
-            Image(systemName: "magnifyingglass")
-            TextField("検索", text: $searchText)
-                .onReceive(NotificationCenter.default.publisher(for: UIResponder.keyboardDidHideNotification)) { _ in
-                    DoSearch()
-                }
-        }
-        .background(Color(red: 0.9, green: 0.9, blue: 0.9))
-        .cornerRadius(10)
-    }
-}
 class FindViewModel: ObservableObject{
     @Published var searchText = ""
     @Published var searchResults = [TeamInformation]()

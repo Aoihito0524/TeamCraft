@@ -47,6 +47,18 @@
 		91F038EA2A412C9300A3B7F6 /* RegisterSettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038E92A412C9300A3B7F6 /* RegisterSettingViewModel.swift */; };
 		91F038EE2A412FEC00A3B7F6 /* EmailVerificationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038ED2A412FEC00A3B7F6 /* EmailVerificationViewModel.swift */; };
 		91F038F22A4130E400A3B7F6 /* RegisterUserNameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038F12A4130E400A3B7F6 /* RegisterUserNameViewModel.swift */; };
+		91F038F52A4131A400A3B7F6 /* FindViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038F42A4131A400A3B7F6 /* FindViewModel.swift */; };
+		91F038F82A4131D600A3B7F6 /* SearchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038F72A4131D600A3B7F6 /* SearchField.swift */; };
+		91F038FA2A4131F700A3B7F6 /* TopBar_FindView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038F92A4131F700A3B7F6 /* TopBar_FindView.swift */; };
+		91F038FD2A41324100A3B7F6 /* TopBar_MailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038FC2A41324100A3B7F6 /* TopBar_MailView.swift */; };
+		91F038FF2A41326400A3B7F6 /* TopBar_MyAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F038FE2A41326400A3B7F6 /* TopBar_MyAccount.swift */; };
+		91F039012A41332E00A3B7F6 /* SelfIntroductionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039002A41332E00A3B7F6 /* SelfIntroductionTextField.swift */; };
+		91F039032A41339E00A3B7F6 /* NumJoinTeamText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039022A41339E00A3B7F6 /* NumJoinTeamText.swift */; };
+		91F039052A41340400A3B7F6 /* NumJoinedTeamText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039042A41340400A3B7F6 /* NumJoinedTeamText.swift */; };
+		91F039072A4134A200A3B7F6 /* EmailInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039062A4134A200A3B7F6 /* EmailInfoText.swift */; };
+		91F039092A41352F00A3B7F6 /* LogOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039082A41352F00A3B7F6 /* LogOutButton.swift */; };
+		91F0390B2A41358D00A3B7F6 /* UserSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0390A2A41358D00A3B7F6 /* UserSymbols.swift */; };
+		91F0390D2A4135D000A3B7F6 /* AccountInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0390C2A4135D000A3B7F6 /* AccountInformationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -92,6 +104,18 @@
 		91F038E92A412C9300A3B7F6 /* RegisterSettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterSettingViewModel.swift; sourceTree = "<group>"; };
 		91F038ED2A412FEC00A3B7F6 /* EmailVerificationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationViewModel.swift; sourceTree = "<group>"; };
 		91F038F12A4130E400A3B7F6 /* RegisterUserNameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserNameViewModel.swift; sourceTree = "<group>"; };
+		91F038F42A4131A400A3B7F6 /* FindViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindViewModel.swift; sourceTree = "<group>"; };
+		91F038F72A4131D600A3B7F6 /* SearchField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchField.swift; sourceTree = "<group>"; };
+		91F038F92A4131F700A3B7F6 /* TopBar_FindView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar_FindView.swift; sourceTree = "<group>"; };
+		91F038FC2A41324100A3B7F6 /* TopBar_MailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar_MailView.swift; sourceTree = "<group>"; };
+		91F038FE2A41326400A3B7F6 /* TopBar_MyAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar_MyAccount.swift; sourceTree = "<group>"; };
+		91F039002A41332E00A3B7F6 /* SelfIntroductionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelfIntroductionTextField.swift; sourceTree = "<group>"; };
+		91F039022A41339E00A3B7F6 /* NumJoinTeamText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumJoinTeamText.swift; sourceTree = "<group>"; };
+		91F039042A41340400A3B7F6 /* NumJoinedTeamText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumJoinedTeamText.swift; sourceTree = "<group>"; };
+		91F039062A4134A200A3B7F6 /* EmailInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInfoText.swift; sourceTree = "<group>"; };
+		91F039082A41352F00A3B7F6 /* LogOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutButton.swift; sourceTree = "<group>"; };
+		91F0390A2A41358D00A3B7F6 /* UserSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSymbols.swift; sourceTree = "<group>"; };
+		91F0390C2A4135D000A3B7F6 /* AccountInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformationView.swift; sourceTree = "<group>"; };
 		BF590AC89079705AB96CD331 /* Pods_TeamCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -138,6 +162,7 @@
 			children = (
 				9166AAC92A3EEC2700895164 /* TextFieldTextures.swift */,
 				9166AAD42A3FF76A00895164 /* PasswordField.swift */,
+				91F038F72A4131D600A3B7F6 /* SearchField.swift */,
 			);
 			path = "入力欄系";
 			sourceTree = "<group>";
@@ -233,6 +258,7 @@
 				919007B32A33F497002CD7B8 /* Team */,
 				919007B52A33F4E8002CD7B8 /* MyAccount */,
 				919007B42A33F4C2002CD7B8 /* Mail */,
+				91F038FC2A41324100A3B7F6 /* TopBar_MailView.swift */,
 			);
 			name = Home;
 			path = ..;
@@ -241,7 +267,8 @@
 		919007B22A33F479002CD7B8 /* Find */ = {
 			isa = PBXGroup;
 			children = (
-				919007B62A33F503002CD7B8 /* FindView.swift */,
+				91F038F62A4131B600A3B7F6 /* FindView */,
+				91F038F92A4131F700A3B7F6 /* TopBar_FindView.swift */,
 				9166AAC42A3DBBC000895164 /* TeamInformationUI.swift */,
 				919007CD2A374961002CD7B8 /* JoinPopupView.swift */,
 			);
@@ -261,7 +288,7 @@
 		919007B42A33F4C2002CD7B8 /* Mail */ = {
 			isa = PBXGroup;
 			children = (
-				919007BA2A33F518002CD7B8 /* MailView.swift */,
+				91F038FB2A41322F00A3B7F6 /* MailView */,
 			);
 			path = Mail;
 			sourceTree = "<group>";
@@ -270,6 +297,8 @@
 			isa = PBXGroup;
 			children = (
 				919007BC2A33F522002CD7B8 /* MyAccountView.swift */,
+				91F038FE2A41326400A3B7F6 /* TopBar_MyAccount.swift */,
+				91F0390E2A4135E300A3B7F6 /* アカウント情報 */,
 			);
 			path = MyAccount;
 			sourceTree = "<group>";
@@ -374,6 +403,45 @@
 				919007AB2A31FE53002CD7B8 /* RegisterFinishView.swift */,
 			);
 			path = "全登録完了画面";
+			sourceTree = "<group>";
+		};
+		91F038F62A4131B600A3B7F6 /* FindView */ = {
+			isa = PBXGroup;
+			children = (
+				919007B62A33F503002CD7B8 /* FindView.swift */,
+				91F038F42A4131A400A3B7F6 /* FindViewModel.swift */,
+			);
+			path = FindView;
+			sourceTree = "<group>";
+		};
+		91F038FB2A41322F00A3B7F6 /* MailView */ = {
+			isa = PBXGroup;
+			children = (
+				919007BA2A33F518002CD7B8 /* MailView.swift */,
+			);
+			path = MailView;
+			sourceTree = "<group>";
+		};
+		91F0390E2A4135E300A3B7F6 /* アカウント情報 */ = {
+			isa = PBXGroup;
+			children = (
+				91F0390F2A41360000A3B7F6 /* AccountInformationView */,
+				91F0390A2A41358D00A3B7F6 /* UserSymbols.swift */,
+				91F039002A41332E00A3B7F6 /* SelfIntroductionTextField.swift */,
+				91F039022A41339E00A3B7F6 /* NumJoinTeamText.swift */,
+				91F039042A41340400A3B7F6 /* NumJoinedTeamText.swift */,
+				91F039062A4134A200A3B7F6 /* EmailInfoText.swift */,
+				91F039082A41352F00A3B7F6 /* LogOutButton.swift */,
+			);
+			path = "アカウント情報";
+			sourceTree = "<group>";
+		};
+		91F0390F2A41360000A3B7F6 /* AccountInformationView */ = {
+			isa = PBXGroup;
+			children = (
+				91F0390C2A4135D000A3B7F6 /* AccountInformationView.swift */,
+			);
+			path = AccountInformationView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,6 +561,7 @@
 			files = (
 				91F038EE2A412FEC00A3B7F6 /* EmailVerificationViewModel.swift in Sources */,
 				919007AE2A32002C002CD7B8 /* EmailVerificationFinishView.swift in Sources */,
+				91F038F82A4131D600A3B7F6 /* SearchField.swift in Sources */,
 				919007A52A31AC5D002CD7B8 /* EmailVerificationView.swift in Sources */,
 				919007A02A318A0A002CD7B8 /* RegisterByEmailView.swift in Sources */,
 				919007D52A396F34002CD7B8 /* TeamTag.swift in Sources */,
@@ -503,21 +572,32 @@
 				919007C52A345C72002CD7B8 /* CreateTeamView.swift in Sources */,
 				919007AA2A31FC9B002CD7B8 /* RegisterUserNameView.swift in Sources */,
 				9166AAC52A3DBBC000895164 /* TeamInformationUI.swift in Sources */,
+				91F039052A41340400A3B7F6 /* NumJoinedTeamText.swift in Sources */,
 				919007C92A345FCA002CD7B8 /* ImagePicker.swift in Sources */,
 				919007A82A31FC58002CD7B8 /* ContentView.swift in Sources */,
 				919007BF2A3414D3002CD7B8 /* ChatView.swift in Sources */,
+				91F039092A41352F00A3B7F6 /* LogOutButton.swift in Sources */,
 				91F038F22A4130E400A3B7F6 /* RegisterUserNameViewModel.swift in Sources */,
 				919007D12A396EB7002CD7B8 /* User.swift in Sources */,
 				919007C72A345D49002CD7B8 /* SelectTagView.swift in Sources */,
+				91F0390D2A4135D000A3B7F6 /* AccountInformationView.swift in Sources */,
+				91F039032A41339E00A3B7F6 /* NumJoinTeamText.swift in Sources */,
 				9166AAD82A3FF92D00895164 /* AuthenticationView.swift in Sources */,
+				91F038F52A4131A400A3B7F6 /* FindViewModel.swift in Sources */,
+				91F038FF2A41326400A3B7F6 /* TopBar_MyAccount.swift in Sources */,
+				91F038FD2A41324100A3B7F6 /* TopBar_MailView.swift in Sources */,
 				9166AAD12A3FCE1A00895164 /* RegisterSettingView.swift in Sources */,
 				919007CC2A346A39002CD7B8 /* DefaultTeamView.swift in Sources */,
 				9166AAC82A3EEC1A00895164 /* UserIcon.swift in Sources */,
 				9166AAD52A3FF76A00895164 /* PasswordField.swift in Sources */,
+				91F0390B2A41358D00A3B7F6 /* UserSymbols.swift in Sources */,
 				919007AC2A31FE53002CD7B8 /* RegisterFinishView.swift in Sources */,
+				91F039012A41332E00A3B7F6 /* SelfIntroductionTextField.swift in Sources */,
 				91F038E42A412A1C00A3B7F6 /* RegisterByEmailViewModel.swift in Sources */,
 				919007C12A34185A002CD7B8 /* ChatViewModel.swift in Sources */,
 				916CC2DD2A31804B00B3A786 /* RegisterView.swift in Sources */,
+				91F039072A4134A200A3B7F6 /* EmailInfoText.swift in Sources */,
+				91F038FA2A4131F700A3B7F6 /* TopBar_FindView.swift in Sources */,
 				919007BD2A33F522002CD7B8 /* MyAccountView.swift in Sources */,
 				916CC2DB2A31804B00B3A786 /* TeamCraftApp.swift in Sources */,
 				9166AACE2A3FCC4800895164 /* LoginView.swift in Sources */,
