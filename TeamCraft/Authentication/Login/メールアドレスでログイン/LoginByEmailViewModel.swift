@@ -9,10 +9,10 @@ import SwiftUI
 import FirebaseAuth
 
 class LoginByEmailViewModel: ObservableObject{
-    @State var email: String = ""
-    @State var password: String = ""
-    @State var errorOccured = false
-    @State var errorMessage = ""
+    @Published var email: String = ""
+    @Published var password: String = ""
+    @Published var errorOccured = false
+    @Published var errorMessage = ""
     func ShowError_or_Finish(error: (any Error)?){
         if let error = error as NSError? {
             if let errorCode = AuthErrorCode.Code(rawValue: error.code){
@@ -21,6 +21,8 @@ class LoginByEmailViewModel: ObservableObject{
                 case .invalidEmail:
                     errorMessage = "無効なメールアドレスです"
                     print("無効なメールアドレスです")
+                case .wrongPassword:
+                    errorMessage = "パスワードが間違っています"
                 default:
                     errorMessage = "エラーが発生しました。お問い合わせください"
                     print("その他のエラーが発生しました")

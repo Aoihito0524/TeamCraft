@@ -10,6 +10,7 @@ import FirebaseAuth
 
 class RegisterUserNameViewModel: ObservableObject{
     @Published var name = ""
+    @Published var isSelectingImage = false
     func RegisterUserName(){
         let user = Auth.auth().currentUser
         let request = (user?.createProfileChangeRequest())!
@@ -22,5 +23,8 @@ class RegisterUserNameViewModel: ObservableObject{
                 print("ユーザー名が設定されました：\(self.name)")
             }
         }
+    }
+    func RegisterUserIcon(){
+        UserInformation.shared.RegisterUserIcon()
     }
 }

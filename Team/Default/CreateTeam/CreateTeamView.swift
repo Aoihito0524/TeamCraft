@@ -11,70 +11,44 @@ import FirebaseStorage
 
 struct CreateTeamView: View{
     @Binding var isCreatingTeam: Bool
-    @ObservedObject var createTeamVM = CreateTeamViewModel()
+    @ObservedObject var VM = CreateTeamViewModel()
     var body: some View{
         NavigationView{
             ZStack{
                 Rectangle()
                     .fill(BACKGROUND_COLOR)
                     .ignoresSafeArea()
-                VStack{
-                    if let message = createTeamVM.retryMessage{
-                        Text(message)
-                    }
-                    //画像
-                    Button(action: {createTeamVM.isSelectingImage = true}){
-                        ZStack{
-                            Rectangle().fill(Color.gray)
-                            if let image = createTeamVM.teamInfo.image{
-                                Image(uiImage: image)
-                                    .resizable()
+                VStack(spacing: 0){
+                    TopBar_CreateTeamView()
+                    ScrollView{
+                        VStack(alignment: .leading, spacing: DEVICE_HEIGHT * 0.05){
+                            Rectangle().fill(Color.clear)
+                                .frame(height: DEVICE_HEIGHT * 0.03)
+                            if let message = VM.retryMessage{
+                                Text(message)
                             }
+                            //画像
+                            SelectHeadlineImage(isSelectingImage: $VM.isSelectingImage, image: $VM.teamInfo.image.image)
+                            //タイトル
+                            CreateTitleTextField(titleText: $VM.teamInfo.title)
+                                .padding(.leading, DEVICE_WIDTH * 0.1)
+                            //タグ
+                            SelectTagRow(tagGroup: $VM.teamInfo.tags)
+                                .padding(.leading, DEVICE_WIDTH * 0.1)
+                            //概要
+                            DescriptionTextField(descriptionText: $VM.teamInfo.description)
+                                .padding(.leading, DEVICE_WIDTH * 0.1)
+                            //チーム作成ボタン
+                            HStack{
+                                Spacer()
+                                CreateTeamButton(VM: VM, isCreatingTeam: $isCreatingTeam)
+                                Spacer()
+                            }
+                            .padding(.leading, DEVICE_WIDTH * 0.1)
+                            .padding(.bottom, DEVICE_HEIGHT * 0.05)
                         }
-                        .frame(width: DEVICE_WIDTH, height: TeamInformation.ImageHeight(width: DEVICE_WIDTH))
-                    }
-                    .sheet(isPresented: $createTeamVM.isSelectingImage){
-                        ImagePicker(image: $createTeamVM.teamInfo.image)
-                    }
-                    //タグ
-                    NavigationLink{
-                        SelectTagView(selectedTagsGroup: $createTeamVM.teamInfo.tags)
-                    } label: {
-                        Text("タグを選ぶ")
-                    }
-                    ForEach(createTeamVM.teamInfo.tags.tags){ tag in
-                        HStack{
-                            TagLabel(tag: tag)
-                        }
-                    }
-                    //タイトル
-                    Text("タイトル")
-                    TextField("タイトルを入力", text: $createTeamVM.teamInfo.title)
-                    //概要
-                    HStack{
-                        Text("概要")
-                        Text("（検索には影響しません）")
-                    }
-                    TextField("概要を入力", text: $createTeamVM.teamInfo.description)
-                    Button(
-                        action: {
-                            if createTeamVM.teamInfo.title == ""{
-                                createTeamVM.retryMessage = "タイトルを入力してください"
-                                return;
-                            }
-                            else if createTeamVM.teamInfo.description == ""{
-                                createTeamVM.retryMessage = "概要を入力してください"
-                                return;
-                            }
-                            else if createTeamVM.teamInfo.tags.tags.count == 0{
-                                createTeamVM.retryMessage = "タグは一つ以上設定してください"
-                                return;
-                            }
-                            createTeamVM.CreateTeam()
-                            isCreatingTeam = false
-                        }
-                    ){
-                        Text("決定")
+                        .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
+                        .background(Color.white.opacity(0.82))
                     }
                 }
             }
@@ -105,5 +79,21 @@ class CreateTeamViewModel: ObservableObject{
     func CreateTeam(){
         teamInfo.register()
         UserInformation.shared.JoinTeam(teamId: teamInfo.teamId)
+    }
+    //全条件を満たし作成可能な場合Trueを返す
+    func CanCreateTeam() -> Bool{
+        if teamInfo.title == ""{
+            retryMessage = "タイトルを入力してください"
+            return false;
+        }
+        else if teamInfo.description == ""{
+            retryMessage = "概要を入力してください"
+            return false;
+        }
+        else if teamInfo.tags.tags.count == 0{
+            retryMessage = "タグは一つ以上設定してください"
+            return false;
+        }
+        return true
     }
 }

@@ -59,6 +59,12 @@
 		91F039092A41352F00A3B7F6 /* LogOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039082A41352F00A3B7F6 /* LogOutButton.swift */; };
 		91F0390B2A41358D00A3B7F6 /* UserSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0390A2A41358D00A3B7F6 /* UserSymbols.swift */; };
 		91F0390D2A4135D000A3B7F6 /* AccountInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0390C2A4135D000A3B7F6 /* AccountInformationView.swift */; };
+		91F039112A41598100A3B7F6 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039102A41598100A3B7F6 /* ImageManager.swift */; };
+		91F039132A416D6F00A3B7F6 /* CreateTitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039122A416D6F00A3B7F6 /* CreateTitleTextField.swift */; };
+		91F039152A416E3600A3B7F6 /* SelectTagRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039142A416E3600A3B7F6 /* SelectTagRow.swift */; };
+		91F039172A416EAA00A3B7F6 /* DescriptionTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039162A416EAA00A3B7F6 /* DescriptionTextField.swift */; };
+		91F039192A416F1F00A3B7F6 /* SelectHeadlineImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039182A416F1F00A3B7F6 /* SelectHeadlineImage.swift */; };
+		91F0391B2A4172B500A3B7F6 /* CreateTeamButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0391A2A4172B500A3B7F6 /* CreateTeamButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -116,6 +122,12 @@
 		91F039082A41352F00A3B7F6 /* LogOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutButton.swift; sourceTree = "<group>"; };
 		91F0390A2A41358D00A3B7F6 /* UserSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSymbols.swift; sourceTree = "<group>"; };
 		91F0390C2A4135D000A3B7F6 /* AccountInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformationView.swift; sourceTree = "<group>"; };
+		91F039102A41598100A3B7F6 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
+		91F039122A416D6F00A3B7F6 /* CreateTitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTitleTextField.swift; sourceTree = "<group>"; };
+		91F039142A416E3600A3B7F6 /* SelectTagRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectTagRow.swift; sourceTree = "<group>"; };
+		91F039162A416EAA00A3B7F6 /* DescriptionTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescriptionTextField.swift; sourceTree = "<group>"; };
+		91F039182A416F1F00A3B7F6 /* SelectHeadlineImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectHeadlineImage.swift; sourceTree = "<group>"; };
+		91F0391A2A4172B500A3B7F6 /* CreateTeamButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamButton.swift; sourceTree = "<group>"; };
 		BF590AC89079705AB96CD331 /* Pods_TeamCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -316,6 +328,11 @@
 			isa = PBXGroup;
 			children = (
 				919007C42A345C72002CD7B8 /* CreateTeamView.swift */,
+				91F0391A2A4172B500A3B7F6 /* CreateTeamButton.swift */,
+				91F039182A416F1F00A3B7F6 /* SelectHeadlineImage.swift */,
+				91F039162A416EAA00A3B7F6 /* DescriptionTextField.swift */,
+				91F039142A416E3600A3B7F6 /* SelectTagRow.swift */,
+				91F039122A416D6F00A3B7F6 /* CreateTitleTextField.swift */,
 				919007C62A345D49002CD7B8 /* SelectTagView.swift */,
 				919007C82A345FCA002CD7B8 /* ImagePicker.swift */,
 			);
@@ -337,6 +354,7 @@
 				919007D02A396EB7002CD7B8 /* User.swift */,
 				919007D22A396ED7002CD7B8 /* TeamInformation.swift */,
 				919007D42A396F34002CD7B8 /* TeamTag.swift */,
+				91F039102A41598100A3B7F6 /* ImageManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -561,6 +579,7 @@
 			files = (
 				91F038EE2A412FEC00A3B7F6 /* EmailVerificationViewModel.swift in Sources */,
 				919007AE2A32002C002CD7B8 /* EmailVerificationFinishView.swift in Sources */,
+				91F039112A41598100A3B7F6 /* ImageManager.swift in Sources */,
 				91F038F82A4131D600A3B7F6 /* SearchField.swift in Sources */,
 				919007A52A31AC5D002CD7B8 /* EmailVerificationView.swift in Sources */,
 				919007A02A318A0A002CD7B8 /* RegisterByEmailView.swift in Sources */,
@@ -581,12 +600,15 @@
 				919007D12A396EB7002CD7B8 /* User.swift in Sources */,
 				919007C72A345D49002CD7B8 /* SelectTagView.swift in Sources */,
 				91F0390D2A4135D000A3B7F6 /* AccountInformationView.swift in Sources */,
+				91F039192A416F1F00A3B7F6 /* SelectHeadlineImage.swift in Sources */,
 				91F039032A41339E00A3B7F6 /* NumJoinTeamText.swift in Sources */,
+				91F039152A416E3600A3B7F6 /* SelectTagRow.swift in Sources */,
 				9166AAD82A3FF92D00895164 /* AuthenticationView.swift in Sources */,
 				91F038F52A4131A400A3B7F6 /* FindViewModel.swift in Sources */,
 				91F038FF2A41326400A3B7F6 /* TopBar_MyAccount.swift in Sources */,
 				91F038FD2A41324100A3B7F6 /* TopBar_MailView.swift in Sources */,
 				9166AAD12A3FCE1A00895164 /* RegisterSettingView.swift in Sources */,
+				91F039172A416EAA00A3B7F6 /* DescriptionTextField.swift in Sources */,
 				919007CC2A346A39002CD7B8 /* DefaultTeamView.swift in Sources */,
 				9166AAC82A3EEC1A00895164 /* UserIcon.swift in Sources */,
 				9166AAD52A3FF76A00895164 /* PasswordField.swift in Sources */,
@@ -604,6 +626,8 @@
 				9166AAD32A3FF72000895164 /* LoginByEmailView.swift in Sources */,
 				919007D32A396ED7002CD7B8 /* TeamInformation.swift in Sources */,
 				9166AACA2A3EEC2700895164 /* TextFieldTextures.swift in Sources */,
+				91F039132A416D6F00A3B7F6 /* CreateTitleTextField.swift in Sources */,
+				91F0391B2A4172B500A3B7F6 /* CreateTeamButton.swift in Sources */,
 				919007CE2A374961002CD7B8 /* JoinPopupView.swift in Sources */,
 				919007BB2A33F518002CD7B8 /* MailView.swift in Sources */,
 				919007B92A33F50F002CD7B8 /* TeamView.swift in Sources */,

@@ -20,7 +20,7 @@ struct FindView: View{
                 ScrollView{
                     LazyVStack{
                         ForEach(VM.searchResults){ teamInfo in
-                            teamInformationUI(teamInfo: teamInfo, clickedTeamInfo: $VM.clickedTeamInfo)
+                            teamInformationUI(teamInfo: teamInfo, image: teamInfo.image, clickedTeamInfo: $VM.clickedTeamInfo)
                         }
                         Divider()
                     }

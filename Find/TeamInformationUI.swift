@@ -9,10 +9,11 @@ import SwiftUI
 
 struct teamInformationUI: View{
     @ObservedObject var teamInfo: TeamInformation //imageのロード前後に観測が必要 -> observed
+    @ObservedObject var image: ImageManager
     @Binding var clickedTeamInfo: TeamInformation?
     var body: some View{
         VStack(alignment: .leading){
-            if let image = teamInfo.image{
+            if let image = image.image{
                 Image(uiImage: image)
                     .resizable()
                     .frame(width: VERTICAL_SCROLLPANEL_WIDTH, height: TeamInformation.ImageHeight(width: VERTICAL_SCROLLPANEL_WIDTH))

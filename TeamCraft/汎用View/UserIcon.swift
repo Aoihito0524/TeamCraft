@@ -9,9 +9,18 @@ import SwiftUI
 
 struct UserIcon: View{
     let size: CGFloat
+    @ObservedObject var IconImage = UserInformation.shared.userIcon
     var body: some View{
-        Image(systemName: "circle.fill")
-            .resizable()
-            .frame(width: size, height: size)
+        ZStack{
+            if let image = IconImage.image{
+                Image(uiImage: image)
+                    .resizable()
+            }
+            else{
+                Rectangle().fill(.black)
+            }
+        }
+        .frame(width: size, height: size)
+        .clipShape(Circle())
     }
 }

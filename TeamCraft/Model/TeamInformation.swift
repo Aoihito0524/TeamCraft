@@ -15,8 +15,7 @@ class TeamInformation: ObservableObject, Identifiable{
         return width * 0.2
     }
     @Published var teamId = ""
-    @Published var image : UIImage?
-    @Published var imageURL: String?
+    @Published var image = ImageManager()
     @Published var title = ""
     @Published var description = ""
     @Published var tags = TagGroup()
@@ -30,39 +29,8 @@ class TeamInformation: ObservableObject, Identifiable{
         tags = TagGroup(StringArray: (data["tags"] as! [String]))
         teamId = document.documentID
         //画像がある場合はロードする
-        imageURL = data["imageURL"] as? String
-        if let urlString = imageURL, let url = URL(string: urlString){
-            URLSession.shared.dataTask(with: url) { (data, response, error) in
-                print("urlLoad Start")
-                guard let data = data else { return }
-                print("After guard")
-                DispatchQueue.main.async {
-                    print("Image Loaded")
-                    self.image = UIImage(data: data)
-                }
-            }.resume()
-        }
-    }
-    func saveImage() -> StorageUploadTask{
-        let reference = Storage.storage().reference()
-        let path = "test.png"
-        let imageRef = reference.child(path)
-        let imageData = image!.jpegData(compressionQuality: 1.0)! as NSData
-        let uploadTask = imageRef.putData(imageData as Data, metadata: nil) { (data, error) in
-            if let error = error{
-                print(error.localizedDescription)
-                return
-            }
-        }
-        uploadTask.observe(.failure) { _ in
-            print("画像のアップロードに失敗しました")
-        }
-        imageRef.downloadURL { url, error in
-            if let url = url {
-                self.imageURL = url.absoluteString
-            }
-        }
-        return uploadTask
+        let imageURL = data["imageURL"] as? String
+        image.loadImage(url: imageURL)
     }
     func SetKeywords(){
         //descriptionはキーワードに入れない。and検索ができないからkeywordsを厳選してもらう方針
@@ -86,7 +54,7 @@ class TeamInformation: ObservableObject, Identifiable{
             SetKeywords()
             let db = Firestore.firestore()
             let data = [
-                "imageURL": imageURL,
+                "imageURL": image.imageURL,
                 "title": title,
                 "description": description,
                 "tags": tags.StringArray(),
@@ -95,12 +63,12 @@ class TeamInformation: ObservableObject, Identifiable{
             db.collection("teamInformation").document(teamId).setData(data)
         }
         //画像がない場合
-        if image == nil{
+        if image.image == nil{
             save_otherThanImage()
             return;
         }
         //画像がある場合
-        let uploadTask = saveImage()
+        let uploadTask = image.SaveImage()
         uploadTask.observe(.success) { _ in
             save_otherThanImage()
         }
