@@ -10,10 +10,10 @@ import FirebaseAuth
 
 struct ChatView: View{
     let teamId: String
-    @ObservedObject var ChatVM: ChatViewModel
+    @ObservedObject var VM: ChatViewModel
     init(teamId: String){
         self.teamId = teamId
-        ChatVM = ChatViewModel(teamId: teamId)
+        VM = ChatViewModel(teamId: teamId)
     }
     var body: some View{
         ZStack(alignment: .bottom){
@@ -24,27 +24,19 @@ struct ChatView: View{
             VStack(spacing: 0){
                 TopBar_ChatView()
                 //メッセージ
-                ScrollView{
-                    LazyVStack{
-                        ForEach(ChatVM.messages){message in
-                            MessageUI(message: message)
-                        }
-                    }
-                    .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
-                }
-                .background(Color.white.opacity(0.82))
+                MessagesView(teamCom: VM.teamCom)
             }
             //メッセージ入力
             ZStack{
                 Rectangle().fill(Color.white)
                     .frame(height: DEVICE_HEIGHT * 0.05)
                 HStack{
-                    TextField("", text: $ChatVM.textMessage)
+                    TextField("", text: $VM.textMessage)
                         .background(Color(red: 0.9, green: 0.9, blue: 0.9))
                         .cornerRadius(15)
                     Button(action:
                             {
-                        ChatVM.AddMessage(message: ChatVM.textMessage, user: (Auth.auth().currentUser?.displayName)!)
+                        VM.AddMessage(message: VM.textMessage, user: (Auth.auth().currentUser?.displayName)!)
                     }
                     ){
                         Image(systemName: "paperplane")

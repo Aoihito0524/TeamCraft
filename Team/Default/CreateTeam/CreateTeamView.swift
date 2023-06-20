@@ -37,7 +37,7 @@ struct CreateTeamView: View{
                                 //概要
                                 DescriptionTextField(descriptionText: $VM.teamInfo.description)
                                 //人数と役割
-                                TeamRolesRow(teamRoles: $VM.teamInfo.teamRoles)
+                                TeamRolesRow(teamRoles: $VM.teamInfo.teamRoles, myRole: $VM.myRole)
                                 //準備期間
                                 PrepareDurationPicker(prepareDays: $VM.teamInfo.prepareDays)
                             }
@@ -74,14 +74,14 @@ struct TopBar_CreateTeamView: View{
 }
 
 class CreateTeamViewModel: ObservableObject{
-    //Model
     @Published var teamInfo = TeamInformation()
     @Published var isSelectingImage = false
-    //
     @Published var retryMessage: String?
+    @Published var myRole: String?
     func CreateTeam(){
         teamInfo.register()
-        UserInformation.shared.JoinTeam(teamId: teamInfo.teamId)
+        let teamCom = TeamCommunication(teamId: teamInfo.teamId)
+        teamCom.Join(role: myRole!)
     }
     //全条件を満たし作成可能な場合Trueを返す
     func CanCreateTeam() -> Bool{
@@ -95,6 +95,14 @@ class CreateTeamViewModel: ObservableObject{
         }
         else if teamInfo.tags.tags.count == 0{
             retryMessage = "タグは一つ以上設定してください"
+            return false;
+        }
+        else if teamInfo.teamRoles.count == 0{
+            retryMessage = "役割は一つ以上設定してください"
+            return false;
+        }
+        else if myRole == nil{
+            retryMessage = "自分の役割を設定してください"
             return false;
         }
         return true

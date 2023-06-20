@@ -67,6 +67,8 @@
 		91F0391B2A4172B500A3B7F6 /* CreateTeamButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0391A2A4172B500A3B7F6 /* CreateTeamButton.swift */; };
 		91F0391D2A41832000A3B7F6 /* TeamRolesRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0391C2A41832000A3B7F6 /* TeamRolesRow.swift */; };
 		91F0391F2A418B7200A3B7F6 /* PrepareDurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0391E2A418B7200A3B7F6 /* PrepareDurationPicker.swift */; };
+		91F039212A41A06A00A3B7F6 /* TeamCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039202A41A06A00A3B7F6 /* TeamCommunication.swift */; };
+		91F039232A41A53300A3B7F6 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039222A41A53300A3B7F6 /* MessagesView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +134,8 @@
 		91F0391A2A4172B500A3B7F6 /* CreateTeamButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTeamButton.swift; sourceTree = "<group>"; };
 		91F0391C2A41832000A3B7F6 /* TeamRolesRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamRolesRow.swift; sourceTree = "<group>"; };
 		91F0391E2A418B7200A3B7F6 /* PrepareDurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDurationPicker.swift; sourceTree = "<group>"; };
+		91F039202A41A06A00A3B7F6 /* TeamCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCommunication.swift; sourceTree = "<group>"; };
+		91F039222A41A53300A3B7F6 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
 		BF590AC89079705AB96CD331 /* Pods_TeamCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -323,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				919007BE2A3414D2002CD7B8 /* ChatView.swift */,
+				91F039222A41A53300A3B7F6 /* MessagesView.swift */,
 				919007C02A34185A002CD7B8 /* ChatViewModel.swift */,
 			);
 			path = Chat;
@@ -359,6 +364,7 @@
 			children = (
 				919007D02A396EB7002CD7B8 /* User.swift */,
 				919007D22A396ED7002CD7B8 /* TeamInformation.swift */,
+				91F039202A41A06A00A3B7F6 /* TeamCommunication.swift */,
 				919007D42A396F34002CD7B8 /* TeamTag.swift */,
 				91F039102A41598100A3B7F6 /* ImageManager.swift */,
 			);
@@ -604,6 +610,7 @@
 				919007BF2A3414D3002CD7B8 /* ChatView.swift in Sources */,
 				91F039092A41352F00A3B7F6 /* LogOutButton.swift in Sources */,
 				91F038F22A4130E400A3B7F6 /* RegisterUserNameViewModel.swift in Sources */,
+				91F039212A41A06A00A3B7F6 /* TeamCommunication.swift in Sources */,
 				919007D12A396EB7002CD7B8 /* User.swift in Sources */,
 				919007C72A345D49002CD7B8 /* SelectTagView.swift in Sources */,
 				91F0390D2A4135D000A3B7F6 /* AccountInformationView.swift in Sources */,
@@ -620,6 +627,7 @@
 				9166AAC82A3EEC1A00895164 /* UserIcon.swift in Sources */,
 				9166AAD52A3FF76A00895164 /* PasswordField.swift in Sources */,
 				91F0390B2A41358D00A3B7F6 /* UserSymbols.swift in Sources */,
+				91F039232A41A53300A3B7F6 /* MessagesView.swift in Sources */,
 				919007AC2A31FE53002CD7B8 /* RegisterFinishView.swift in Sources */,
 				91F039012A41332E00A3B7F6 /* SelfIntroductionTextField.swift in Sources */,
 				91F038E42A412A1C00A3B7F6 /* RegisterByEmailViewModel.swift in Sources */,

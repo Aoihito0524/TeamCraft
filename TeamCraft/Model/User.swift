@@ -35,9 +35,10 @@ class UserInformation: ObservableObject{
                     let imageURL = snapshot.get("userIconURL") as? String
                     self.userIcon.loadImage(url: imageURL)
                 }
-                else{ //新規作成
-                    self.save()
-                }
+                // ?? []の方で回避しててこっち機能してないと思う
+//                else{ //新規作成
+//                    self.save()
+//                }
             }
         }
     }

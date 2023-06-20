@@ -12,14 +12,36 @@ import FirebaseFirestore
 struct JoinPopupView: View{
     let closePopup: () -> ()
     let teamInfo: TeamInformation
+    @ObservedObject var teamCom: TeamCommunication
+    @State var ErrorMessage: String?
+    @State var role: String?
+    init(closePopup: @escaping () -> (), teamInfo: TeamInformation){
+        self.closePopup = closePopup
+        self.teamInfo = teamInfo
+        teamCom = TeamCommunication(teamId: teamInfo.teamId)
+    }
     var body: some View{
         VStack{
+            if let message = ErrorMessage{
+                Text(message)
+            }
             Text("「\(teamInfo.title)」に参加しますか？")
+            Text("役割を選択してください")
+            ForEach(teamInfo.RoleLeft(teamCom: teamCom), id: \.self){role in
+                Button(role){
+                    
+                }
+            }
             Divider()
             HStack{
                 Button("参加する"){
-                    UserInformation.shared.JoinTeam(teamId: teamInfo.teamId)
-                    closePopup()
+                    if let role = role{
+                        teamCom.Join(role: role)
+                        closePopup()
+                    }
+                    else{
+                        ErrorMessage = "役割を選択してください"
+                    }
                 }
                 Button("参加しない"){closePopup()}
             }
