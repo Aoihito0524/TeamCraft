@@ -16,55 +16,39 @@ struct ChatView: View{
         VM = ChatViewModel(teamId: teamId)
     }
     var body: some View{
-        ZStack(alignment: .bottom){
-            //背景
-            Rectangle()
-                .fill(BACKGROUND_COLOR)
-                .ignoresSafeArea()
-            VStack(spacing: 0){
-                TopBar_ChatView()
-                //メッセージ
-                MessagesView(teamCom: VM.teamCom)
-            }
-            //メッセージ入力
-            ZStack{
-                Rectangle().fill(Color.white)
-                    .frame(height: DEVICE_HEIGHT * 0.05)
-                HStack{
-                    TextField("", text: $VM.textMessage)
-                        .background(Color(red: 0.9, green: 0.9, blue: 0.9))
-                        .cornerRadius(15)
-                    Button(action:
-                            {
-                        VM.AddMessage(message: VM.textMessage, user: (Auth.auth().currentUser?.displayName)!)
-                    }
-                    ){
-                        Image(systemName: "paperplane")
-                            .foregroundColor(Color.blue)
-                    }
+        NavigationView{
+            ZStack(alignment: .bottom){
+                //背景
+                Rectangle()
+                    .fill(BACKGROUND_COLOR)
+                    .ignoresSafeArea()
+                VStack(spacing: 0){
+                    TopBar_ChatView(teamCom: VM.teamCom)
+                    //メッセージ
+                    MessagesView(teamCom: VM.teamCom)
                 }
-                .padding(.horizontal, DEVICE_WIDTH * 0.05)
+                //メッセージ入力
+                ZStack{
+                    Rectangle().fill(Color.white)
+                        .frame(height: DEVICE_HEIGHT * 0.05)
+                    HStack{
+                        TextField("", text: $VM.textMessage)
+                            .background(Color(red: 0.9, green: 0.9, blue: 0.9))
+                            .cornerRadius(15)
+                        Button(action:
+                                {
+                            VM.AddMessage(message: VM.textMessage, user: (Auth.auth().currentUser?.displayName)!)
+                        }
+                        ){
+                            Image(systemName: "paperplane")
+                                .foregroundColor(Color.blue)
+                        }
+                    }
+                    .padding(.horizontal, DEVICE_WIDTH * 0.05)
+                }
+                .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
             }
-            .frame(width: VERTICAL_SCROLLPANEL_WIDTH)
         }
-    }
-}
-
-struct TopBar_ChatView: View{
-    var body: some View{
-        HStack{
-            UserIcon(size: DEVICE_HEIGHT * 0.07)
-                .padding(DEVICE_HEIGHT * 0.03)
-            HStack{
-                Text("チーム")
-                    .font(.title)
-                Image(systemName: "gearshape")
-                Image(systemName: "person")
-            }
-            .padding(.trailing, DEVICE_HEIGHT * 0.05)
-        }
-        .frame(width: DEVICE_WIDTH)
-        .background(Color.white.opacity(0.92))
     }
 }
 

@@ -69,6 +69,9 @@
 		91F039272A42DD3800A3B7F6 /* RegisterUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039262A42DD3800A3B7F6 /* RegisterUserNameView.swift */; };
 		91F039292A42DD6A00A3B7F6 /* LoginByEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039282A42DD6A00A3B7F6 /* LoginByEmailView.swift */; };
 		91F0392B2A42DD8900A3B7F6 /* RegisterByEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0392A2A42DD8900A3B7F6 /* RegisterByEmailView.swift */; };
+		91F0392D2A42E1B400A3B7F6 /* TopBar_ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0392C2A42E1B400A3B7F6 /* TopBar_ChatView.swift */; };
+		91F0392F2A42E1D700A3B7F6 /* TeamSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0392E2A42E1D700A3B7F6 /* TeamSettingView.swift */; };
+		91F039312A42F3C600A3B7F6 /* teamInformationUI_TeamSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039302A42F3C600A3B7F6 /* teamInformationUI_TeamSetting.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +139,9 @@
 		91F039262A42DD3800A3B7F6 /* RegisterUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserNameView.swift; sourceTree = "<group>"; };
 		91F039282A42DD6A00A3B7F6 /* LoginByEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginByEmailView.swift; sourceTree = "<group>"; };
 		91F0392A2A42DD8900A3B7F6 /* RegisterByEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterByEmailView.swift; sourceTree = "<group>"; };
+		91F0392C2A42E1B400A3B7F6 /* TopBar_ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopBar_ChatView.swift; sourceTree = "<group>"; };
+		91F0392E2A42E1D700A3B7F6 /* TeamSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamSettingView.swift; sourceTree = "<group>"; };
+		91F039302A42F3C600A3B7F6 /* teamInformationUI_TeamSetting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = teamInformationUI_TeamSetting.swift; sourceTree = "<group>"; };
 		BF590AC89079705AB96CD331 /* Pods_TeamCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -327,6 +333,9 @@
 			isa = PBXGroup;
 			children = (
 				919007BE2A3414D2002CD7B8 /* ChatView.swift */,
+				91F0392C2A42E1B400A3B7F6 /* TopBar_ChatView.swift */,
+				91F0392E2A42E1D700A3B7F6 /* TeamSettingView.swift */,
+				91F039302A42F3C600A3B7F6 /* teamInformationUI_TeamSetting.swift */,
 				91F039222A41A53300A3B7F6 /* MessagesView.swift */,
 				919007C02A34185A002CD7B8 /* ChatViewModel.swift */,
 			);
@@ -592,6 +601,7 @@
 				91F038EE2A412FEC00A3B7F6 /* EmailVerificationViewModel.swift in Sources */,
 				919007AE2A32002C002CD7B8 /* EmailVerificationFinishView.swift in Sources */,
 				91F039112A41598100A3B7F6 /* ImageManager.swift in Sources */,
+				91F0392D2A42E1B400A3B7F6 /* TopBar_ChatView.swift in Sources */,
 				91F038F82A4131D600A3B7F6 /* SearchField.swift in Sources */,
 				919007A52A31AC5D002CD7B8 /* EmailVerificationView.swift in Sources */,
 				91F0392B2A42DD8900A3B7F6 /* RegisterByEmailView.swift in Sources */,
@@ -643,7 +653,9 @@
 				919007D32A396ED7002CD7B8 /* TeamInformation.swift in Sources */,
 				9166AACA2A3EEC2700895164 /* TextFieldTextures.swift in Sources */,
 				91F039132A416D6F00A3B7F6 /* CreateTitleTextField.swift in Sources */,
+				91F039312A42F3C600A3B7F6 /* teamInformationUI_TeamSetting.swift in Sources */,
 				91F0391B2A4172B500A3B7F6 /* CreateTeamButton.swift in Sources */,
+				91F0392F2A42E1D700A3B7F6 /* TeamSettingView.swift in Sources */,
 				919007CE2A374961002CD7B8 /* JoinPopupView.swift in Sources */,
 				919007BB2A33F518002CD7B8 /* MailView.swift in Sources */,
 				919007B92A33F50F002CD7B8 /* TeamView.swift in Sources */,

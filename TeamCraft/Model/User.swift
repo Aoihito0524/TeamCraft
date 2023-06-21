@@ -18,7 +18,6 @@ class UserInformation: ObservableObject{
     @Published var joinTeamIds: [String] = []
     @Published var joinedTeamIds: [String] = []
     @Published var userIcon = ImageManager()
-    @Published var userIconURL: String?
     init() {
         let db = Firestore.firestore()
         if let user = Auth.auth().currentUser{
@@ -55,7 +54,7 @@ class UserInformation: ObservableObject{
     func save(){
         let db = Firestore.firestore()
         if let user = Auth.auth().currentUser{
-            let data = ["joinTeamIds": joinTeamIds, "joinedTeamIds": joinedTeamIds, "userIconURL": userIconURL] as [String : Any]
+            let data = ["joinTeamIds": joinTeamIds, "joinedTeamIds": joinedTeamIds, "userIconURL": userIcon.imageURL] as [String : Any]
             db.collection("userInformation").document(userId).setData(data){ error in
                 if let error = error {
                     print(error.localizedDescription)

@@ -12,7 +12,7 @@ import FirebaseFirestore
 class TeamCommunication: ObservableObject{
     @Published var teamId: String
     @Published var messages = [messageDataType]()
-    @Published var teamMemberRole = [(String, String)]()
+    @Published var teamMemberRole = [String: String]()
     let teamCommunicationRef: DocumentReference
     init(teamId: String) {
         self.teamId = teamId
@@ -23,8 +23,7 @@ class TeamCommunication: ObservableObject{
             //データがあった場合
             if let snapshot = snapshot, snapshot.exists{
                 let data = (snapshot.data())!
-                let dic = data["teamMemberRole"] as! [String: String]
-                self.teamMemberRole = dic.map{($0.key, $0.value)}
+                self.teamMemberRole = data["teamMemberRole"] as! [String: String]
             }
             else{ //新規作成
                 self.Save()
@@ -58,7 +57,7 @@ class TeamCommunication: ObservableObject{
         }
     }
     func Join(role: String, teamInfo: TeamInformation){
-        teamMemberRole.append((UserInformation.shared.userId, role))
+        teamMemberRole[role] = UserInformation.shared.userId
         teamInfo.Join(role: role)
         Save()
         UserInformation.shared.JoinTeam(teamId: teamId)
@@ -83,7 +82,7 @@ class TeamCommunication: ObservableObject{
     }
     private func Save(){
         let data = [
-            "teamMemberRole": Dictionary(uniqueKeysWithValues: teamMemberRole), //辞書にして保存
+            "teamMemberRole":  teamMemberRole,
         ]
         teamCommunicationRef.setData(data){_ in}
     }

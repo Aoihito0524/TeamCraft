@@ -20,7 +20,10 @@ struct FindView: View{
                 ScrollView{
                     LazyVStack{
                         ForEach(VM.searchResults){ teamInfo in
-                            teamInformationUI(teamInfo: teamInfo, image: teamInfo.image, clickedTeamInfo: $VM.clickedTeamInfo)
+                            //参加中のチームじゃなければ表示
+                            if !UserInformation.shared.joinTeamIds.contains(teamInfo.teamId){
+                                teamInformationUI(teamInfo: teamInfo, image: teamInfo.image, clickedTeamInfo: $VM.clickedTeamInfo)
+                            }
                         }
                         Divider()
                     }

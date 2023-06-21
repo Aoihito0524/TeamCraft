@@ -24,13 +24,16 @@ class TeamInformation: ObservableObject, Identifiable{
     @Published var num_FullMember = 0
     @Published var prepareDays = 7
     init(){}
+    //大量取得用
     init(document: QueryDocumentSnapshot){
         let data = document.data()
-        //画像以外をロードする
+        teamId = document.documentID
+        SetDatas(data: data)
+    }
+    func SetDatas(data: [String: Any]){
         title = data["title"] as! String
         description = data["description"] as! String
         tags = TagGroup(StringArray: (data["tags"] as! [String]))
-        teamId = document.documentID
         let dic = data["teamRolesLeft"] as! [String: Int]
         teamRolesLeft = dic.map{($0.key, $0.value)}
         num_FullMember = data["num_FullMember"] as! Int
@@ -38,6 +41,17 @@ class TeamInformation: ObservableObject, Identifiable{
         //画像がある場合はロードする
         let imageURL = data["imageURL"] as? String
         image.loadImage(url: imageURL)
+    }
+    //単体取得用
+    init(teamId: String){
+        self.teamId = teamId
+        let db = Firestore.firestore()
+        db.collection("teamInformation").document(teamId).getDocument(){ snapshot, error in
+            if let snapshot = snapshot, snapshot.exists{
+                let data = (snapshot.data())!
+                self.SetDatas(data: data)
+            }
+        }
     }
     func SetKeywords(){
         //descriptionはキーワードに入れない。and検索ができないからkeywordsを厳選してもらう方針
