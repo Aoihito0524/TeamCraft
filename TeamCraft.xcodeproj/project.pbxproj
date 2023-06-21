@@ -13,18 +13,15 @@
 		9166AACA2A3EEC2700895164 /* TextFieldTextures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAC92A3EEC2700895164 /* TextFieldTextures.swift */; };
 		9166AACE2A3FCC4800895164 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AACD2A3FCC4800895164 /* LoginView.swift */; };
 		9166AAD12A3FCE1A00895164 /* RegisterSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAD02A3FCE1A00895164 /* RegisterSettingView.swift */; };
-		9166AAD32A3FF72000895164 /* LoginByEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAD22A3FF72000895164 /* LoginByEmailView.swift */; };
 		9166AAD52A3FF76A00895164 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAD42A3FF76A00895164 /* PasswordField.swift */; };
 		9166AAD82A3FF92D00895164 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAD72A3FF92D00895164 /* AuthenticationView.swift */; };
 		916CC2DB2A31804B00B3A786 /* TeamCraftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */; };
 		916CC2DD2A31804B00B3A786 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916CC2DC2A31804B00B3A786 /* RegisterView.swift */; };
 		916CC2DF2A31804C00B3A786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2DE2A31804C00B3A786 /* Assets.xcassets */; };
 		916CC2E22A31804C00B3A786 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2E12A31804C00B3A786 /* Preview Assets.xcassets */; };
-		919007A02A318A0A002CD7B8 /* RegisterByEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9190079F2A318A0A002CD7B8 /* RegisterByEmailView.swift */; };
 		919007A12A318B22002CD7B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2E82A3185F900B3A786 /* GoogleService-Info.plist */; };
 		919007A52A31AC5D002CD7B8 /* EmailVerificationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */; };
 		919007A82A31FC58002CD7B8 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A72A31FC58002CD7B8 /* ContentView.swift */; };
-		919007AA2A31FC9B002CD7B8 /* RegisterUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007A92A31FC9B002CD7B8 /* RegisterUserNameView.swift */; };
 		919007AC2A31FE53002CD7B8 /* RegisterFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007AB2A31FE53002CD7B8 /* RegisterFinishView.swift */; };
 		919007AE2A32002C002CD7B8 /* EmailVerificationFinishView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007AD2A32002C002CD7B8 /* EmailVerificationFinishView.swift */; };
 		919007B12A33F430002CD7B8 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919007B02A33F430002CD7B8 /* HomeView.swift */; };
@@ -69,6 +66,9 @@
 		91F0391F2A418B7200A3B7F6 /* PrepareDurationPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0391E2A418B7200A3B7F6 /* PrepareDurationPicker.swift */; };
 		91F039212A41A06A00A3B7F6 /* TeamCommunication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039202A41A06A00A3B7F6 /* TeamCommunication.swift */; };
 		91F039232A41A53300A3B7F6 /* MessagesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039222A41A53300A3B7F6 /* MessagesView.swift */; };
+		91F039272A42DD3800A3B7F6 /* RegisterUserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039262A42DD3800A3B7F6 /* RegisterUserNameView.swift */; };
+		91F039292A42DD6A00A3B7F6 /* LoginByEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039282A42DD6A00A3B7F6 /* LoginByEmailView.swift */; };
+		91F0392B2A42DD8900A3B7F6 /* RegisterByEmailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0392A2A42DD8900A3B7F6 /* RegisterByEmailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,7 +79,6 @@
 		9166AAC92A3EEC2700895164 /* TextFieldTextures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldTextures.swift; sourceTree = "<group>"; };
 		9166AACD2A3FCC4800895164 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9166AAD02A3FCE1A00895164 /* RegisterSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterSettingView.swift; path = "../New Group/RegisterSettingView.swift"; sourceTree = "<group>"; };
-		9166AAD22A3FF72000895164 /* LoginByEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginByEmailView.swift; sourceTree = "<group>"; };
 		9166AAD42A3FF76A00895164 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		9166AAD72A3FF92D00895164 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
 		916CC2D72A31804B00B3A786 /* TeamCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -88,10 +87,8 @@
 		916CC2DE2A31804C00B3A786 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		916CC2E12A31804C00B3A786 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		916CC2E82A3185F900B3A786 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		9190079F2A318A0A002CD7B8 /* RegisterByEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterByEmailView.swift; sourceTree = "<group>"; };
 		919007A42A31AC5D002CD7B8 /* EmailVerificationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationView.swift; sourceTree = "<group>"; };
 		919007A72A31FC58002CD7B8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		919007A92A31FC9B002CD7B8 /* RegisterUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserNameView.swift; sourceTree = "<group>"; };
 		919007AB2A31FE53002CD7B8 /* RegisterFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterFinishView.swift; sourceTree = "<group>"; };
 		919007AD2A32002C002CD7B8 /* EmailVerificationFinishView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailVerificationFinishView.swift; sourceTree = "<group>"; };
 		919007B02A33F430002CD7B8 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -136,6 +133,9 @@
 		91F0391E2A418B7200A3B7F6 /* PrepareDurationPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrepareDurationPicker.swift; sourceTree = "<group>"; };
 		91F039202A41A06A00A3B7F6 /* TeamCommunication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCommunication.swift; sourceTree = "<group>"; };
 		91F039222A41A53300A3B7F6 /* MessagesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesView.swift; sourceTree = "<group>"; };
+		91F039262A42DD3800A3B7F6 /* RegisterUserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterUserNameView.swift; sourceTree = "<group>"; };
+		91F039282A42DD6A00A3B7F6 /* LoginByEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginByEmailView.swift; sourceTree = "<group>"; };
+		91F0392A2A42DD8900A3B7F6 /* RegisterByEmailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterByEmailView.swift; sourceTree = "<group>"; };
 		BF590AC89079705AB96CD331 /* Pods_TeamCraft.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TeamCraft.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -374,7 +374,7 @@
 		91F038E22A412A0000A3B7F6 /* メールアドレスで登録 */ = {
 			isa = PBXGroup;
 			children = (
-				9190079F2A318A0A002CD7B8 /* RegisterByEmailView.swift */,
+				91F0392A2A42DD8900A3B7F6 /* RegisterByEmailView.swift */,
 				91F038E32A412A1C00A3B7F6 /* RegisterByEmailViewModel.swift */,
 			);
 			name = "メールアドレスで登録";
@@ -384,7 +384,7 @@
 		91F038E52A412A4000A3B7F6 /* メールアドレスでログイン */ = {
 			isa = PBXGroup;
 			children = (
-				9166AAD22A3FF72000895164 /* LoginByEmailView.swift */,
+				91F039282A42DD6A00A3B7F6 /* LoginByEmailView.swift */,
 				91F038E62A412A9F00A3B7F6 /* LoginByEmailViewModel.swift */,
 			);
 			name = "メールアドレスでログイン";
@@ -420,7 +420,7 @@
 		91F038F02A41303100A3B7F6 /* ユーザー名登録 */ = {
 			isa = PBXGroup;
 			children = (
-				919007A92A31FC9B002CD7B8 /* RegisterUserNameView.swift */,
+				91F039262A42DD3800A3B7F6 /* RegisterUserNameView.swift */,
 				91F038F12A4130E400A3B7F6 /* RegisterUserNameViewModel.swift */,
 			);
 			name = "ユーザー名登録";
@@ -594,14 +594,13 @@
 				91F039112A41598100A3B7F6 /* ImageManager.swift in Sources */,
 				91F038F82A4131D600A3B7F6 /* SearchField.swift in Sources */,
 				919007A52A31AC5D002CD7B8 /* EmailVerificationView.swift in Sources */,
-				919007A02A318A0A002CD7B8 /* RegisterByEmailView.swift in Sources */,
+				91F0392B2A42DD8900A3B7F6 /* RegisterByEmailView.swift in Sources */,
 				919007D52A396F34002CD7B8 /* TeamTag.swift in Sources */,
 				91F038E72A412A9F00A3B7F6 /* LoginByEmailViewModel.swift in Sources */,
 				919007B12A33F430002CD7B8 /* HomeView.swift in Sources */,
 				91F038EA2A412C9300A3B7F6 /* RegisterSettingViewModel.swift in Sources */,
 				919007B72A33F503002CD7B8 /* FindView.swift in Sources */,
 				919007C52A345C72002CD7B8 /* CreateTeamView.swift in Sources */,
-				919007AA2A31FC9B002CD7B8 /* RegisterUserNameView.swift in Sources */,
 				9166AAC52A3DBBC000895164 /* TeamInformationUI.swift in Sources */,
 				91F039052A41340400A3B7F6 /* NumJoinedTeamText.swift in Sources */,
 				919007C92A345FCA002CD7B8 /* ImagePicker.swift in Sources */,
@@ -617,6 +616,7 @@
 				91F039192A416F1F00A3B7F6 /* SelectHeadlineImage.swift in Sources */,
 				91F039032A41339E00A3B7F6 /* NumJoinTeamText.swift in Sources */,
 				91F039152A416E3600A3B7F6 /* SelectTagRow.swift in Sources */,
+				91F039272A42DD3800A3B7F6 /* RegisterUserNameView.swift in Sources */,
 				9166AAD82A3FF92D00895164 /* AuthenticationView.swift in Sources */,
 				91F038F52A4131A400A3B7F6 /* FindViewModel.swift in Sources */,
 				91F038FF2A41326400A3B7F6 /* TopBar_MyAccount.swift in Sources */,
@@ -633,13 +633,13 @@
 				91F038E42A412A1C00A3B7F6 /* RegisterByEmailViewModel.swift in Sources */,
 				919007C12A34185A002CD7B8 /* ChatViewModel.swift in Sources */,
 				916CC2DD2A31804B00B3A786 /* RegisterView.swift in Sources */,
+				91F039292A42DD6A00A3B7F6 /* LoginByEmailView.swift in Sources */,
 				91F039072A4134A200A3B7F6 /* EmailInfoText.swift in Sources */,
 				91F038FA2A4131F700A3B7F6 /* TopBar_FindView.swift in Sources */,
 				919007BD2A33F522002CD7B8 /* MyAccountView.swift in Sources */,
 				916CC2DB2A31804B00B3A786 /* TeamCraftApp.swift in Sources */,
 				91F0391D2A41832000A3B7F6 /* TeamRolesRow.swift in Sources */,
 				9166AACE2A3FCC4800895164 /* LoginView.swift in Sources */,
-				9166AAD32A3FF72000895164 /* LoginByEmailView.swift in Sources */,
 				919007D32A396ED7002CD7B8 /* TeamInformation.swift in Sources */,
 				9166AACA2A3EEC2700895164 /* TextFieldTextures.swift in Sources */,
 				91F039132A416D6F00A3B7F6 /* CreateTitleTextField.swift in Sources */,

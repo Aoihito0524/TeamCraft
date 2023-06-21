@@ -1,5 +1,5 @@
 //
-//  LoginView.swift
+//  RegisterByEmailView.swift
 //  TeamCraft
 //
 //  Created by 木村友祐 on 2023/06/08.
@@ -55,3 +55,4 @@ struct RegisterByEmailView: View{
         .cornerRadius(10)
     }
 }
+
