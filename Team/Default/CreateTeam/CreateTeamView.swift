@@ -37,7 +37,7 @@ struct CreateTeamView: View{
                                 //概要
                                 DescriptionTextField(descriptionText: $VM.teamInfo.description)
                                 //人数と役割
-                                TeamRolesRow(teamRoles: $VM.teamInfo.teamRoles, myRole: $VM.myRole)
+                                TeamRolesRow(teamRoles: $VM.teamInfo.teamRolesLeft, myRole: $VM.myRole, Set_Num_FullMember: {VM.Set_Num_FullMember()})
                                 //準備期間
                                 PrepareDurationPicker(prepareDays: $VM.teamInfo.prepareDays)
                             }
@@ -81,7 +81,10 @@ class CreateTeamViewModel: ObservableObject{
     func CreateTeam(){
         teamInfo.register()
         let teamCom = TeamCommunication(teamId: teamInfo.teamId)
-        teamCom.Join(role: myRole!)
+        teamCom.Join(role: myRole!, teamInfo: teamInfo)
+    }
+    func Set_Num_FullMember(){
+        teamInfo.num_FullMember = teamInfo.NumLeft_Member()
     }
     //全条件を満たし作成可能な場合Trueを返す
     func CanCreateTeam() -> Bool{
@@ -97,7 +100,7 @@ class CreateTeamViewModel: ObservableObject{
             retryMessage = "タグは一つ以上設定してください"
             return false;
         }
-        else if teamInfo.teamRoles.count == 0{
+        else if teamInfo.teamRolesLeft.count == 0{
             retryMessage = "役割は一つ以上設定してください"
             return false;
         }

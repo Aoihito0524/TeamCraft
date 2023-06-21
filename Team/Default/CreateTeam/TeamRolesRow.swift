@@ -10,6 +10,7 @@ import SwiftUI
 struct TeamRolesRow: View{
     @Binding var teamRoles: [(String, Int)]
     @Binding var myRole: String?
+    let Set_Num_FullMember: () -> ()
     @State var roles = ""
     @State private var Roles = [String]()
     @State private var Num_Assign = [Int]()
@@ -53,14 +54,15 @@ struct TeamRolesRow: View{
                     }
                     .onChange(of: Roles){newValue in
                         myRole = newValue[myRole_selection]
+                        Set_Num_FullMember()
                     }
                 }
             }
             .padding(.leading, DEVICE_WIDTH*0.05)
         }
         .onAppear{
-            Roles = [String]()
-            Num_Assign = [Int]()
+            Roles = teamRoles.map{$0.0}
+            Num_Assign = teamRoles.map{$0.1}
             myRole_selection = 0
         }
     }

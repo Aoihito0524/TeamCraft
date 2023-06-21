@@ -27,7 +27,7 @@ struct JoinPopupView: View{
             }
             Text("「\(teamInfo.title)」に参加しますか？")
             Text("役割を選択してください")
-            ForEach(teamInfo.RoleLeft(teamCom: teamCom), id: \.self){role in
+            ForEach(teamInfo.RoleLeft(), id: \.self){role in
                 Button(role){
                     
                 }
@@ -36,7 +36,7 @@ struct JoinPopupView: View{
             HStack{
                 Button("参加する"){
                     if let role = role{
-                        teamCom.Join(role: role)
+                        teamCom.Join(role: role, teamInfo: teamInfo)
                         closePopup()
                     }
                     else{

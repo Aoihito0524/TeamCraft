@@ -20,18 +20,9 @@ class TeamInformation: ObservableObject, Identifiable{
     @Published var description = ""
     @Published var tags = TagGroup()
     @Published var keywords = [String]()
-    @Published var teamRoles = [(String, Int)]()
+    @Published var teamRolesLeft = [(String, Int)]()
+    @Published var num_FullMember = 0
     @Published var prepareDays = 7
-    //チームの最大人数
-    var num_FullMember: Int{
-        get{
-            var num_full = 0
-            teamRoles.forEach{ role, num in
-                num_full += num
-            }
-            return num_full
-        }
-    }
     init(){}
     init(document: QueryDocumentSnapshot){
         let data = document.data()
@@ -40,7 +31,9 @@ class TeamInformation: ObservableObject, Identifiable{
         description = data["description"] as! String
         tags = TagGroup(StringArray: (data["tags"] as! [String]))
         teamId = document.documentID
-        teamRoles = (data["teamRoles"] as! [String: Int]).map{($0.key, $0.value)}
+        let dic = data["teamRolesLeft"] as! [String: Int]
+        teamRolesLeft = dic.map{($0.key, $0.value)}
+        num_FullMember = data["num_FullMember"] as! Int
         prepareDays = data["prepareDays"] as! Int
         //画像がある場合はロードする
         let imageURL = data["imageURL"] as? String
@@ -73,7 +66,8 @@ class TeamInformation: ObservableObject, Identifiable{
                 "description": description,
                 "tags": tags.StringArray(),
                 "keywords": keywords,
-                "teamRoles": teamRoles.map{[$0.0: $0.1]}, //辞書にして保存
+                "teamRolesLeft": Dictionary(uniqueKeysWithValues: teamRolesLeft),
+                "num_FullMember": num_FullMember,
                 "prepareDays": prepareDays
             ] as [String : Any]
             db.collection("teamInformation").document(teamId).setData(data)
@@ -101,16 +95,22 @@ class TeamInformation: ObservableObject, Identifiable{
         db.collection("teamCommunication").document(teamId).setData([:]){_ in }
         save()
     }
-    func RoleLeft(teamCom: TeamCommunication) -> [String]{
-        var roleLefts = Set(teamRoles.map{$0.0})
-        let roles = teamCom.teamMemberRole.map{$0.1}
-        teamRoles.forEach{(role, num) in
-            let num_MembersOfRole = roles.filter { $0 == role }.count
-            //満員の場合
-            if num == num_MembersOfRole{
-                roleLefts.remove(role)
-            }
+    func RoleLeft() -> [String]{
+        return teamRolesLeft.map{$0.0}
+    }
+    func NumLeft_Member() -> Int{
+        var num_full = 0
+        teamRolesLeft.forEach{ role, num in
+            num_full += num
         }
-        return Array(roleLefts)
+        return num_full
+    }
+    func Join(role: String){
+        var dic: [String: Int] = Dictionary(uniqueKeysWithValues: teamRolesLeft)
+        dic[role] = dic[role]! - 1
+        if dic[role] == 0{
+            dic.removeValue(forKey: role)
+        }
+        teamRolesLeft = dic.map{($0.key, $0.value)}
     }
 }

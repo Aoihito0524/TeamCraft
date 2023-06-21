@@ -34,7 +34,7 @@ struct teamInformationUI: View{
                     .font(.body)
                     .lineLimit(5)
                     .frame(maxHeight: DEVICE_HEIGHT * 0.15)
-                Text("残り人数:  /\(teamInfo.num_FullMember)人")
+                Text("参加人数:  \(teamInfo.num_FullMember - teamInfo.NumLeft_Member())/\(teamInfo.num_FullMember)人")
                 Spacer()
             }
             .padding(.leading, DEVICE_WIDTH * 0.04)
