@@ -51,6 +51,11 @@ class UserInformation: ObservableObject{
 
         save()
     }
+    func Leave(teamId: String){
+        //joinedTeamIdsはすぐ去ったか長居したかで変えないとダメ
+        joinTeamIds.removeAll(where: {$0 == teamId})
+        save()
+    }
     func save(){
         let db = Firestore.firestore()
         if let user = Auth.auth().currentUser{

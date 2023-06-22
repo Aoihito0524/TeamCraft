@@ -57,10 +57,17 @@ class TeamCommunication: ObservableObject{
         }
     }
     func Join(role: String, teamInfo: TeamInformation){
-        teamMemberRole[role] = UserInformation.shared.userId
+        teamMemberRole[UserInformation.shared.userId] = role
         teamInfo.Join(role: role)
         Save()
         UserInformation.shared.JoinTeam(teamId: teamId)
+    }
+    func Leave(userId: String, teamInfo: TeamInformation){
+        let role = teamMemberRole[userId]
+        teamMemberRole.removeValue(forKey: userId)
+        teamInfo.Leave(role: role!)
+        Save()
+        UserInformation.shared.Leave(teamId: teamId)
     }
     func AddMessage(message: String , user: String) {
         let data = [

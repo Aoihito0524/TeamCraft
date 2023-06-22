@@ -44,14 +44,24 @@ class TeamInformation: ObservableObject, Identifiable{
     }
     //単体取得用
     init(teamId: String){
+        RetrieveData(teamId: teamId)
+    }
+    func RetrieveData(teamId: String){
         self.teamId = teamId
         let db = Firestore.firestore()
         db.collection("teamInformation").document(teamId).getDocument(){ snapshot, error in
             if let snapshot = snapshot, snapshot.exists{
                 let data = (snapshot.data())!
+                if data.count == 0{return;}
                 self.SetDatas(data: data)
             }
         }
+    }
+    func isCompletelyLoaded() -> Bool{
+        if teamId == "" { return false }
+        if title == "" { return false }
+        if description == "" { return false }
+        return true
     }
     func SetKeywords(){
         //descriptionはキーワードに入れない。and検索ができないからkeywordsを厳選してもらう方針
@@ -126,5 +136,17 @@ class TeamInformation: ObservableObject, Identifiable{
             dic.removeValue(forKey: role)
         }
         teamRolesLeft = dic.map{($0.key, $0.value)}
+        save()
+    }
+    func Leave(role: String){
+        var dic: [String: Int] = Dictionary(uniqueKeysWithValues: teamRolesLeft)
+        if let count = dic[role]{
+            dic[role] = count + 1
+        }
+        else{
+            dic[role] = 1
+        }
+        teamRolesLeft = dic.map{($0.key, $0.value)}
+        save()
     }
 }
