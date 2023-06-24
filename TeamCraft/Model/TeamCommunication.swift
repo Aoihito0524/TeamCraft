@@ -20,10 +20,12 @@ class TeamCommunication: ObservableObject{
         teamCommunicationRef = db.collection("teamCommunication").document(teamId)
         //メッセージ以外取得
         teamCommunicationRef.getDocument(){ snapshot, error in
-            //データがあった場合
             if let snapshot = snapshot, snapshot.exists{
                 let data = (snapshot.data())!
-                self.teamMemberRole = data["teamMemberRole"] as! [String: String]
+                //アップロードしてすぐだとデータがないことがある
+                if data.count != 0{
+                    self.teamMemberRole = data["teamMemberRole"] as! [String: String]
+                }
             }
             else{ //新規作成
                 self.Save()

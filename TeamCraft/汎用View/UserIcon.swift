@@ -6,10 +6,19 @@
 //
 
 import SwiftUI
+import FirebaseAuth
 
 struct UserIcon: View{
     let size: CGFloat
-    @ObservedObject var IconImage = UserInformation.shared.userIcon
+    @ObservedObject var IconImage: ImageManager
+    init(size: CGFloat, IconImage: ImageManager){
+        self.size = size
+        self.IconImage = IconImage
+        self.IconImage.loadImage(url: Auth.auth().currentUser?.photoURL?.absoluteString)
+    }
+    init(size: CGFloat){
+        self.init(size: size, IconImage: ImageManager())
+    }
     var body: some View{
         ZStack{
             if let image = IconImage.image{

@@ -26,7 +26,7 @@ class ImageManager: ObservableObject{
     }
     func SaveImage() -> StorageUploadTask{
         let reference = Storage.storage().reference()
-        let path = "test.png"
+        let path = "\(UUID().uuidString).png"
         let imageRef = reference.child(path)
         let imageData = image!.jpegData(compressionQuality: 1.0)! as NSData
         let uploadTask = imageRef.putData(imageData as Data, metadata: nil) { (data, error) in

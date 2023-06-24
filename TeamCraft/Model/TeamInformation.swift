@@ -72,6 +72,7 @@ class TeamInformation: ObservableObject, Identifiable{
         }
     }
     func GetKeywords(string: String) -> [String]{
+        if string == ""{return[]}
         var keywords = Set<String>()
         for num in 0..<string.count - 1{
             let fromIdx = string.index(string.startIndex, offsetBy: num)
