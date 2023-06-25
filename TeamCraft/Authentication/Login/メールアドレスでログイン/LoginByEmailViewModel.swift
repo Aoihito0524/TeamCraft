@@ -13,6 +13,11 @@ class LoginByEmailViewModel: ObservableObject{
     @Published var password: String = ""
     @Published var errorOccured = false
     @Published var errorMessage = ""
+    func TryLogin(){
+        Auth.auth().signIn(withEmail: self.email, password: self.password) { authResult, error in
+            self.ShowError_or_Finish(error: error)
+        }
+    }
     func ShowError_or_Finish(error: (any Error)?){
         if let error = error as NSError? {
             if let errorCode = AuthErrorCode.Code(rawValue: error.code){

@@ -14,7 +14,6 @@ struct UserIcon: View{
     init(size: CGFloat, IconImage: ImageManager){
         self.size = size
         self.IconImage = IconImage
-        self.IconImage.loadImage(url: Auth.auth().currentUser?.photoURL?.absoluteString)
     }
     init(size: CGFloat){
         self.init(size: size, IconImage: ImageManager())
@@ -31,5 +30,9 @@ struct UserIcon: View{
         }
         .frame(width: size, height: size)
         .clipShape(Circle())
+        .onAppear{
+            //init内にあるとPublishing changes from within view updates is not allowed, this will cause undefined behavior.が出るため、ここに書く
+            IconImage.loadImage(url: Auth.auth().currentUser?.photoURL?.absoluteString)
+        }
     }
 }

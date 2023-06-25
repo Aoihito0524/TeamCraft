@@ -44,7 +44,7 @@ struct EmailVelificationView: View{
         .background(Color.white)
         .cornerRadius(10)
         .onAppear{
-            if !(Auth.auth().currentUser?.isEmailVerified)!{
+            if !((Auth.auth().currentUser?.isEmailVerified) ?? false){
                 VM.SetTimer_forCheckIsVerified(onVerified: {finishFlag.toggle()})
                 VM.SendVerification()
             }

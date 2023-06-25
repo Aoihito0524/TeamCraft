@@ -39,8 +39,9 @@ struct RegisterSettingView: View{
             if progress == RegisterSettingStep.progress.Finish{
                 finished = true
             }
-            if progress == RegisterSettingStep.progress.Finish{
-                //Change@later 認証画面から戻るとログイン・レジスター画面に戻る
+            //ログアウトしてログイン画面に戻る
+            if progress == RegisterSettingStep.progress.Back{
+                try? Auth.auth().signOut()
             }
         }
         .onAppear{

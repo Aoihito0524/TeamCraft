@@ -25,11 +25,9 @@ struct LoginByEmailView: View{
             PasswordField(message: "パスワード", password: $VM.password)
                 .textFieldTexture()
                 .padding(.bottom, DEVICE_HEIGHT * 0.046)
+            //ログインボタン
             Button(action: {
-                //新規登録
-                Auth.auth().signIn(withEmail: VM.email, password: VM.password) { authResult, error in
-                    VM.ShowError_or_Finish(error: error)
-                }
+                VM.TryLogin()
             }){
                 Text("ログイン")
                     .enterButtonTexture()
