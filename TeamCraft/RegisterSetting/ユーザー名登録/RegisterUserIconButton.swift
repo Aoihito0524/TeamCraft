@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct RegisterUserIconButton: View{
-    @ObservedObject var icon: ImageManager
+    @ObservedObject var userIcon: ImageManager
     @State var isSelectingImage = false
     var body: some View{
         Button(action: {isSelectingImage = true}){
-            UserIcon(size: DEVICE_WIDTH*0.5, IconImage: icon)
+            UserIcon(size: DEVICE_WIDTH*0.5)
         }
         .sheet(isPresented: $isSelectingImage){
-            ImagePicker(image: $icon.image)
+            ImagePicker(image: $userIcon.image)
         }
     }
 }

@@ -14,7 +14,7 @@ struct AccountInformationView: View{
         ScrollView{
             VStack(spacing: 0){
                 //アイコンと名前
-                UserSymbols()
+                UserSymbolsView()
                 .padding(.vertical, DEVICE_HEIGHT * 0.04)
                 VStack(alignment: .leading, spacing: DEVICE_HEIGHT*0.05){
                     SelfIntroductionTextField(SelfIntroductionText: $SelfIntroductionText)

@@ -97,14 +97,14 @@ class TeamInformation: ObservableObject, Identifiable{
             ] as [String : Any]
             db.collection("teamInformation").document(teamId).setData(data)
         }
+        let uploadTask = image.SaveImage()
         //画像がない場合
-        if image.image == nil{
+        if uploadTask == nil{
             save_otherThanImage()
             return;
         }
         //画像がある場合
-        let uploadTask = image.SaveImage()
-        uploadTask.observe(.success) { _ in
+        uploadTask!.observe(.success) { _ in
             save_otherThanImage()
         }
     }

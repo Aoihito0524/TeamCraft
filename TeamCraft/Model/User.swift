@@ -17,7 +17,6 @@ class UserInformation: ObservableObject{
     @Published var userId: String = ""
     @Published var joinTeamIds: [String] = []
     @Published var joinedTeamIds: [String] = []
-    @Published var userIcon = ImageManager()
     init() {
         let db = Firestore.firestore()
         if let user = Auth.auth().currentUser{
@@ -30,14 +29,7 @@ class UserInformation: ObservableObject{
                 if let snapshot = snapshot, snapshot.exists{
                     self.joinTeamIds = snapshot.get("joinTeamIds") as? [String] ?? []
                     self.joinedTeamIds = snapshot.get("joinedTeamIds") as? [String] ?? []
-                    //画像がある場合はロードする
-                    let imageURL = snapshot.get("userIconURL") as? String
-                    self.userIcon.loadImage(url: imageURL)
                 }
-                // ?? []の方で回避しててこっち機能してないと思う
-//                else{ //新規作成
-//                    self.save()
-//                }
             }
         }
     }
@@ -59,7 +51,7 @@ class UserInformation: ObservableObject{
     func save(){
         let db = Firestore.firestore()
         if let user = Auth.auth().currentUser{
-            let data = ["joinTeamIds": joinTeamIds, "joinedTeamIds": joinedTeamIds, "userIconURL": userIcon.imageURL] as [String : Any]
+            let data = ["joinTeamIds": joinTeamIds, "joinedTeamIds": joinedTeamIds] as [String : Any]
             db.collection("userInformation").document(userId).setData(data){ error in
                 if let error = error {
                     print(error.localizedDescription)
@@ -67,12 +59,6 @@ class UserInformation: ObservableObject{
                 }
                 print("ユーザー情報がセーブされました")
             }
-        }
-    }
-    func RegisterUserIcon(){
-        let uploadTask = userIcon.SaveImage()
-        uploadTask.observe(.success) { _ in
-            self.save()
         }
     }
 }

@@ -15,11 +15,11 @@ struct RegisterUserNameView: View{
             Text("ユーザーネームを登録")
                 .font(.title)
                 .padding(.vertical, DEVICE_HEIGHT * 0.05)
-            RegisterUserIconButton(icon: VM.icon)
-            RegisterUserNameField(name: $VM.name)
+            RegisterUserIconButton(userIcon: VM.userSymbols.userIcon)
+            RegisterUserNameField(name: $VM.userSymbols.userName)
             Divider()
             Button("次へ"){
-                VM.RegisterUserNameIcon()
+                VM.Save()
                 finishFlag.toggle()
             }
             .frame(height: DEVICE_HEIGHT * 0.08)

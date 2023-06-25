@@ -27,9 +27,6 @@ class TeamCommunication: ObservableObject{
                     self.teamMemberRole = data["teamMemberRole"] as! [String: String]
                 }
             }
-            else{ //新規作成
-                self.Save()
-            }
         }
         //メッセージのリアルタイム取得処理
         let messageCollection = teamCommunicationRef.collection("messages")

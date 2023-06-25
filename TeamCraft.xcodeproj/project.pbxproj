@@ -15,6 +15,7 @@
 		9166AAD12A3FCE1A00895164 /* RegisterSettingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAD02A3FCE1A00895164 /* RegisterSettingView.swift */; };
 		9166AAD52A3FF76A00895164 /* PasswordField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAD42A3FF76A00895164 /* PasswordField.swift */; };
 		9166AAD82A3FF92D00895164 /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9166AAD72A3FF92D00895164 /* AuthenticationView.swift */; };
+		9169E59E2A4828AF00270814 /* UserSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9169E59D2A4828AF00270814 /* UserSymbols.swift */; };
 		916CC2DB2A31804B00B3A786 /* TeamCraftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */; };
 		916CC2DD2A31804B00B3A786 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 916CC2DC2A31804B00B3A786 /* RegisterView.swift */; };
 		916CC2DF2A31804C00B3A786 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 916CC2DE2A31804C00B3A786 /* Assets.xcassets */; };
@@ -54,7 +55,7 @@
 		91F039052A41340400A3B7F6 /* NumJoinedTeamText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039042A41340400A3B7F6 /* NumJoinedTeamText.swift */; };
 		91F039072A4134A200A3B7F6 /* EmailInfoText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039062A4134A200A3B7F6 /* EmailInfoText.swift */; };
 		91F039092A41352F00A3B7F6 /* LogOutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039082A41352F00A3B7F6 /* LogOutButton.swift */; };
-		91F0390B2A41358D00A3B7F6 /* UserSymbols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0390A2A41358D00A3B7F6 /* UserSymbols.swift */; };
+		91F0390B2A41358D00A3B7F6 /* UserSymbolsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0390A2A41358D00A3B7F6 /* UserSymbolsView.swift */; };
 		91F0390D2A4135D000A3B7F6 /* AccountInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F0390C2A4135D000A3B7F6 /* AccountInformationView.swift */; };
 		91F039112A41598100A3B7F6 /* ImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039102A41598100A3B7F6 /* ImageManager.swift */; };
 		91F039132A416D6F00A3B7F6 /* CreateTitleTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F039122A416D6F00A3B7F6 /* CreateTitleTextField.swift */; };
@@ -87,6 +88,7 @@
 		9166AAD02A3FCE1A00895164 /* RegisterSettingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RegisterSettingView.swift; path = "../New Group/RegisterSettingView.swift"; sourceTree = "<group>"; };
 		9166AAD42A3FF76A00895164 /* PasswordField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordField.swift; sourceTree = "<group>"; };
 		9166AAD72A3FF92D00895164 /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		9169E59D2A4828AF00270814 /* UserSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSymbols.swift; sourceTree = "<group>"; };
 		916CC2D72A31804B00B3A786 /* TeamCraft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TeamCraft.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		916CC2DA2A31804B00B3A786 /* TeamCraftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamCraftApp.swift; sourceTree = "<group>"; };
 		916CC2DC2A31804B00B3A786 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -127,7 +129,7 @@
 		91F039042A41340400A3B7F6 /* NumJoinedTeamText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumJoinedTeamText.swift; sourceTree = "<group>"; };
 		91F039062A4134A200A3B7F6 /* EmailInfoText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailInfoText.swift; sourceTree = "<group>"; };
 		91F039082A41352F00A3B7F6 /* LogOutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutButton.swift; sourceTree = "<group>"; };
-		91F0390A2A41358D00A3B7F6 /* UserSymbols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSymbols.swift; sourceTree = "<group>"; };
+		91F0390A2A41358D00A3B7F6 /* UserSymbolsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserSymbolsView.swift; sourceTree = "<group>"; };
 		91F0390C2A4135D000A3B7F6 /* AccountInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountInformationView.swift; sourceTree = "<group>"; };
 		91F039102A41598100A3B7F6 /* ImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageManager.swift; sourceTree = "<group>"; };
 		91F039122A416D6F00A3B7F6 /* CreateTitleTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTitleTextField.swift; sourceTree = "<group>"; };
@@ -377,6 +379,7 @@
 			isa = PBXGroup;
 			children = (
 				919007D02A396EB7002CD7B8 /* User.swift */,
+				9169E59D2A4828AF00270814 /* UserSymbols.swift */,
 				919007D22A396ED7002CD7B8 /* TeamInformation.swift */,
 				91F039202A41A06A00A3B7F6 /* TeamCommunication.swift */,
 				919007D42A396F34002CD7B8 /* TeamTag.swift */,
@@ -471,7 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				91F0390F2A41360000A3B7F6 /* AccountInformationView */,
-				91F0390A2A41358D00A3B7F6 /* UserSymbols.swift */,
+				91F0390A2A41358D00A3B7F6 /* UserSymbolsView.swift */,
 				91F039002A41332E00A3B7F6 /* SelfIntroductionTextField.swift */,
 				91F039022A41339E00A3B7F6 /* NumJoinTeamText.swift */,
 				91F039042A41340400A3B7F6 /* NumJoinedTeamText.swift */,
@@ -646,6 +649,7 @@
 				91F038F22A4130E400A3B7F6 /* RegisterUserNameViewModel.swift in Sources */,
 				91F039212A41A06A00A3B7F6 /* TeamCommunication.swift in Sources */,
 				919007D12A396EB7002CD7B8 /* User.swift in Sources */,
+				9169E59E2A4828AF00270814 /* UserSymbols.swift in Sources */,
 				919007C72A345D49002CD7B8 /* SelectTagView.swift in Sources */,
 				91F039382A45B58D00A3B7F6 /* RegisterUserNameButton.swift in Sources */,
 				91F0390D2A4135D000A3B7F6 /* AccountInformationView.swift in Sources */,
@@ -663,7 +667,7 @@
 				919007CC2A346A39002CD7B8 /* DefaultTeamView.swift in Sources */,
 				9166AAC82A3EEC1A00895164 /* UserIcon.swift in Sources */,
 				9166AAD52A3FF76A00895164 /* PasswordField.swift in Sources */,
-				91F0390B2A41358D00A3B7F6 /* UserSymbols.swift in Sources */,
+				91F0390B2A41358D00A3B7F6 /* UserSymbolsView.swift in Sources */,
 				91F039232A41A53300A3B7F6 /* MessagesView.swift in Sources */,
 				919007AC2A31FE53002CD7B8 /* RegisterFinishView.swift in Sources */,
 				91F039012A41332E00A3B7F6 /* SelfIntroductionTextField.swift in Sources */,
