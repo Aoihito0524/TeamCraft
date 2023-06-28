@@ -10,21 +10,21 @@ import SwiftUI
 struct HomeView: View{
     var body: some View{
         TabView{
-            FindView() //1枚目の子ビュー
+            FindView()
                 .tabItem {
-                    Image(systemName: "magnifyingglass") //タブバーの①
+                    Image(systemName: "magnifyingglass")
                 }
-            TeamView() //2枚目の子ビュー
+            TeamView()
                 .tabItem {
-                    Image(systemName: "rectangle.3.group.bubble.left") //タブバーの②
+                    Image(systemName: "rectangle.3.group.bubble.left")
                 }
-            MyAccountView() //2枚目の子ビュー
+            MyAccountView()
                 .tabItem {
-                    Image(systemName: "person.crop.circle") //タブバーの②
+                    Image(systemName: "person.crop.circle")
                 }
-            MailView() //2枚目の子ビュー
+            MailView()
                 .tabItem {
-                    Image(systemName: "envelope") //タブバーの②
+                    Image(systemName: "envelope")
                 }
         }
     }
