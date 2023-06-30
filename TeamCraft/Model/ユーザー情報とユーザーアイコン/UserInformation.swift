@@ -13,14 +13,16 @@ import FirebaseStorage
 //ユーザークラスは責務が大きくなりやすいため、このクラスはデータとその基本処理にとどめたい
 //ViewModelはこのクラスではなく他のクラスからこのクラスの要素に間接的にアクセスしたい
 class UserInformation: ObservableObject{
-    static let shared = UserInformation()
+    static let shared = UserInformation(userId: Auth.auth().currentUser?.uid)
     @Published var userId: String = ""
     @Published var joinTeamIds: [String] = []
     @Published var joinedTeamIds: [String] = []
-    init() {
+    @Published var userName = ""
+    @Published var photoURL: String?
+    init(userId: String?) {
         let db = Firestore.firestore()
-        if let user = Auth.auth().currentUser{
-            userId = user.uid
+        if let userId = userId{
+            self.userId = userId
             let document = db.collection("userInformation").document(userId)
             document.getDocument(){ snapshot, error in
                 if let error = error{
@@ -29,6 +31,8 @@ class UserInformation: ObservableObject{
                 if let snapshot = snapshot, snapshot.exists{
                     self.joinTeamIds = snapshot.get("joinTeamIds") as? [String] ?? []
                     self.joinedTeamIds = snapshot.get("joinedTeamIds") as? [String] ?? []
+                    self.userName = snapshot.get("userName") as! String
+                    self.photoURL = snapshot.get("photoURL") as? String
                 }
             }
         }
@@ -48,10 +52,15 @@ class UserInformation: ObservableObject{
         joinTeamIds.removeAll(where: {$0 == teamId})
         save()
     }
+    func RegisterNameAndPhotoURL(name: String, photoURL: String?){
+        self.userName = name
+        self.photoURL = photoURL
+        save()
+    }
     func save(){
         let db = Firestore.firestore()
         if let user = Auth.auth().currentUser{
-            let data = ["joinTeamIds": joinTeamIds, "joinedTeamIds": joinedTeamIds] as [String : Any]
+            let data = ["userName": userName, "photoURL": photoURL, "joinTeamIds": joinTeamIds, "joinedTeamIds": joinedTeamIds] as [String : Any]
             db.collection("userInformation").document(userId).setData(data){ error in
                 if let error = error {
                     print(error.localizedDescription)
