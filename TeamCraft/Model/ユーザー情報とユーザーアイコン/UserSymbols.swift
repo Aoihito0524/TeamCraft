@@ -30,6 +30,9 @@ class UserSymbols: ObservableObject{
         }
     }
     private func SaveNameAndIcon(){
+        //firestore上の変更
+        UserInformation.shared.RegisterNameAndPhotoURL(name: userName, photoURL: userIcon.imageURL)
+        //auth上の変更
         let user = Auth.auth().currentUser
         let request = (user?.createProfileChangeRequest())!
         request.displayName = self.userName

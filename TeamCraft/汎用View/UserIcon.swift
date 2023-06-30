@@ -11,6 +11,14 @@ import FirebaseAuth
 struct UserIcon: View{
     let size: CGFloat
     @ObservedObject var userIcon = UserSymbols.shared.userIcon
+    init(size: CGFloat){
+        self.size = size
+    }
+    init(size: CGFloat, photoURL: String?){
+        self.size = size
+        userIcon = ImageManager()
+        userIcon.loadImage(url: photoURL)
+    }
     var body: some View{
         ZStack{
             if let image = userIcon.image{

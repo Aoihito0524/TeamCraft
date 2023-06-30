@@ -11,13 +11,25 @@ import FirebaseAuth
 @MainActor
 
 struct ContentView: View{
-    @State var needAuthentication = true
+    @ObservedObject var VM = ContentViewModel()
     var body: some View{
-        if needAuthentication{
-            AuthenticationView(needAuthentication: $needAuthentication)
-        }
-        else{
-            HomeView()
+        ZStack{
+            if VM.needAuthentication{
+                AuthenticationView(needAuthentication: $VM.needAuthentication)
+            }
+            else{
+                HomeView()
+            }
         }
     }
 }
+
+class ContentViewModel: ObservableObject{
+    @Published var needAuthentication = true
+    func SetListener_WhenAuthChanged(){
+        Auth.auth().addStateDidChangeListener{ auth, user in
+            self.needAuthentication = (user == nil)
+        }
+    }
+}
+

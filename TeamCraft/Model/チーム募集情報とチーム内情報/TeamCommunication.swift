@@ -13,6 +13,7 @@ class TeamCommunication: ObservableObject{
     @Published var teamId: String
     @Published var messages = [messageDataType]()
     @Published var teamMemberRole = [String: String]()
+    @Published var userInfos = [String: UserInformation]()
     let teamCommunicationRef: DocumentReference
     init(teamId: String) {
         self.teamId = teamId
@@ -25,6 +26,9 @@ class TeamCommunication: ObservableObject{
                 //アップロードしてすぐだとデータがないことがある
                 if data.count != 0{
                     self.teamMemberRole = data["teamMemberRole"] as! [String: String]
+                    let userIds = data["userIds"] as! [String]
+                    let array = userIds.map{ ($0, UserInformation(userId: $0)) }
+                    self.userInfos = Dictionary(uniqueKeysWithValues: array)
                 }
             }
         }
@@ -32,6 +36,9 @@ class TeamCommunication: ObservableObject{
     }
     func Join(role: String, teamInfo: TeamInformation){
         teamMemberRole[UserInformation.shared.userId] = role
+        if let user = Auth.auth().currentUser{
+            userInfos[user.uid] = UserInformation.shared
+        }
         teamInfo.Join(role: role)
         Save()
         UserInformation.shared.JoinTeam(teamId: teamId)
@@ -39,6 +46,7 @@ class TeamCommunication: ObservableObject{
     func Leave(userId: String, teamInfo: TeamInformation){
         let role = teamMemberRole[userId]
         teamMemberRole.removeValue(forKey: userId)
+        userInfos.removeValue(forKey: userId)
         teamInfo.Leave(role: role!)
         Save()
         UserInformation.shared.Leave(teamId: teamId)
@@ -64,7 +72,8 @@ class TeamCommunication: ObservableObject{
     private func Save(){
         let data = [
             "teamMemberRole":  teamMemberRole,
-        ]
+            "userIds": userInfos.keys
+        ] as [String: Any]
         teamCommunicationRef.setData(data){_ in}
     }
     
@@ -81,13 +90,12 @@ class TeamCommunication: ObservableObject{
                     //メッセージは追加(・削除)のみ
                     //追加された場合と最初のロード
                     if i.type == .added {
-                        let userName = i.document.get("userName") as? String ?? ""
+                        let userId = i.document.get("userId") as? String ?? ""
                         let message = i.document.get("message") as! String
                         let createdAt = i.document.get("createAt", serverTimestampBehavior: .estimate) as! Timestamp
                         let createDate = createdAt.dateValue()
-                        let id = i.document.documentID
 
-                        self.messages.append(messageDataType(teamId: teamId, userName: userName, message: message, createAt: createDate))
+                        self.messages.append(messageDataType(userId: userId, message: message, createAt: createDate))
                     }
                 }
                 // 日付順に並べ替えする
@@ -100,8 +108,7 @@ class TeamCommunication: ObservableObject{
 }
 
 struct messageDataType {
-    var teamId: String
-    var userName: String
+    var userId: String
     var message: String
     var createAt: Date
 }
